@@ -393,13 +393,18 @@
             }
             
             /* Masonry Grid Layout */
+            /* Masonry Grid Layout */
+            :root {
+                --grid-gap: 12px;
+            }
             .artists-grid {
                 width: 100%;
                 margin: 0 auto;
             }
-
             .video-item {
-                margin-bottom: 12px;
+                margin-bottom: var(--grid-gap);
+                box-sizing: border-box;
+                padding: calc(var(--grid-gap) / 2);
             }
 
             .video-item.tiny {
@@ -451,34 +456,75 @@
                 grid-row: span 2;
             }
             
+            /* Aspect ratio classes using padding-top technique */
+            .video-item {
+                position: relative;
+            }
+
+            .video-item:before {
+                content: '';
+                display: block;
+            }
+
+            .video-item.ratio-1x1:before {
+                padding-top: 100%;
+            }
+
+            .video-item.ratio-4x3:before {
+                padding-top: 75%;
+            }
+
+            .video-item.ratio-16x9:before {
+                padding-top: 56.25%;
+            }
+
+            .video-item.ratio-3x4:before {
+                padding-top: 133.33%;
+            }
+
+            .video-item.ratio-9x16:before {
+                padding-top: 177.78%;
+            }
+
+            .video-item video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            
             /* Media queries for responsive grid */
-            @media (max-width: 1200px) {
-                .artists-grid {
-                    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                }
-                .video-item.aspect-wide {
-                    grid-column: span 2;
-                }
+            @media screen and (max-width: 1200px) {
+                .video-item.wide { width: 40%; }
+                .video-item.large { width: 33.333%; }
+                .video-item.tall { width: 25%; }
             }
             
-            @media (max-width: 768px) {
-                .artists-grid {
-                    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                    gap: 8px;
-                }
-                .video-item.aspect-landscape {
-                    grid-column: span 1;
-                }
+            @media screen and (max-width: 991px) {
+                .video-item.tiny { width: 25%; }
+                .video-item.wide, 
+                .video-item.large { width: 33.333%; }
+                .video-item.tall { width: 30%; }
             }
             
-            @media (max-width: 480px) {
-                .artists-grid {
-                    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                }
-                .video-item.aspect-wide, 
-                .video-item.aspect-landscape {
-                    grid-column: span 1;
-                }
+            @media screen and (max-width: 768px) {
+                .video-item.tiny,
+                .video-item.small { width: 33.333%; }
+                .video-item.medium,
+                .video-item.large,
+                .video-item.wide,
+                .video-item.tall { width: 50%; }
+            }
+            
+            @media screen and (max-width: 480px) {
+                .video-item.tiny,
+                .video-item.small,
+                .video-item.medium { width: 50%; }
+                .video-item.large,
+                .video-item.wide,
+                .video-item.tall { width: 100%; }
             }
             
             .video-play-icon {
@@ -1160,6 +1206,55 @@
                 image.style.setProperty('--rotate-x', '0deg');
                 image.style.setProperty('--rotate-y', '0deg');
             });
+        });
+    </script>
+    <script>
+        // Initialize Masonry on the artists-grid with specified settings
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.querySelector('.artists-grid');
+            const videos = grid.querySelectorAll('video');
+            let videosLoaded = 0;
+            
+            // Function to initialize Masonry
+            function initMasonry() {
+                const masonry = new Masonry(grid, {
+                    itemSelector: '.video-item',
+                    fitWidth: true,
+                    percentPosition: true,
+                    gutter: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gap') || '12')
+                });
+                
+                // Debounced resize handler
+                let resizeTimer;
+                window.addEventListener('resize', function() {
+                    clearTimeout(resizeTimer);
+                    resizeTimer = setTimeout(function() {
+                        masonry.layout();
+                    }, 250);
+                });
+            }
+            
+            // Wait for both images and video metadata to load
+            function checkAllLoaded() {
+                videosLoaded++;
+                if (videosLoaded === videos.length) {
+                    imagesLoaded(grid, initMasonry);
+                }
+            }
+            
+            // Load video metadata
+            videos.forEach(video => {
+                if (video.readyState >= 1) {
+                    checkAllLoaded();
+                } else {
+                    video.addEventListener('loadedmetadata', checkAllLoaded);
+                }
+            });
+            
+            // If no videos, just wait for images
+            if (!videos.length) {
+                imagesLoaded(grid, initMasonry);
+            }
         });
     </script>
     <!-- Add CSS for the hover effect and sparkles -->
