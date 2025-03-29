@@ -408,7 +408,7 @@
       itemSelector: '.video-item',
       fitWidth: true,
       percentPosition: true,
-      gutter: 12
+      gutter: 16
     });
 
     // Re-layout Masonry when images are loaded
