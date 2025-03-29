@@ -102,10 +102,184 @@
       }
     }); */
 
-    // Handle image click to show in modal
-    $('.artists-image').on('click', function() {
-      var slideTo = $(this).data('bs-slide-to');
-      $('#carouselExampleControls').carousel(slideTo);
+    // Initialize all Bootstrap components
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all modals
+        var modals = document.querySelectorAll('.modal');
+        modals.forEach(function(modal) {
+            new bootstrap.Modal(modal);
+        });
+
+        // Initialize carousel with proper settings using native Bootstrap 5
+        var galleryCarousel = new bootstrap.Carousel(document.getElementById('carouselGallery'), {
+            interval: false,
+            keyboard: true
+        });
+
+        // Handle image and video click to show in modal with vanilla JS
+        document.querySelectorAll('.artists-image, .video-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var slideTo = this.getAttribute('data-bs-slide-to');
+                var modal = new bootstrap.Modal(document.getElementById('imageModal'));
+                modal.show();
+                galleryCarousel.to(parseInt(slideTo));
+            });
+        });
+
+        // Handle modal opening for videos with vanilla JS
+        document.getElementById('imageModal').addEventListener('shown.bs.modal', function() {
+            var activeItem = this.querySelector('.carousel-item.active');
+            if (activeItem.getAttribute('data-media-type') === 'video') {
+                var video = activeItem.querySelector('video');
+                if (video) {
+                    video.play();
+                }
+            }
+        });
+
+        // Pause videos when modal is closed with vanilla JS
+        document.getElementById('imageModal').addEventListener('hide.bs.modal', function() {
+            var videos = this.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // Handle transitions between slides
+        document.getElementById('carouselGallery').addEventListener('slide.bs.carousel', function(e) {
+            // Pause all videos and reset them to beginning
+            var videos = this.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.pause();
+                video.currentTime = 0;
+            });
+        });
+
+        // After slide transition completes
+        document.getElementById('carouselGallery').addEventListener('slid.bs.carousel', function() {
+            var activeItem = this.querySelector('.carousel-item.active');
+            if (activeItem.getAttribute('data-media-type') === 'video') {
+                var video = activeItem.querySelector('video');
+                if (video) {
+                    video.play();
+                }
+            }
+        });
+
+        // Video control buttons
+        document.querySelectorAll('.video-control-btn').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var action = this.getAttribute('data-action');
+                var carouselItem = this.closest('.carousel-item');
+                var video = carouselItem.querySelector('video');
+                
+                if (!video) return;
+                
+                switch(action) {
+                    case 'play':
+                        video.play();
+                        break;
+                    case 'pause':
+                        video.pause();
+                        break;
+                    case 'mute':
+                        video.muted = !video.muted;
+                        var icon = this.querySelector('i');
+                        if (video.muted) {
+                            icon.classList.remove('bi-volume-up-fill');
+                            icon.classList.add('bi-volume-mute-fill');
+                        } else {
+                            icon.classList.remove('bi-volume-mute-fill');
+                            icon.classList.add('bi-volume-up-fill');
+                        }
+                        break;
+                }
+            });
+        });
+
+        // Handle keyboard controls for videos
+        document.addEventListener('keydown', function(e) {
+            var modal = document.getElementById('imageModal');
+            if (!modal.classList.contains('show')) return;
+            
+            var activeSlide = document.querySelector('#carouselGallery .carousel-item.active');
+            if (activeSlide.getAttribute('data-media-type') !== 'video') return;
+            
+            var video = activeSlide.querySelector('video');
+            if (!video) return;
+            
+            switch(e.key.toLowerCase()) {
+                case ' ':  // Space bar
+                    e.preventDefault();
+                    video.paused ? video.play() : video.pause();
+                    break;
+                case 'm':  // Mute toggle
+                    video.muted = !video.muted;
+                    var muteButton = activeSlide.querySelector('[data-action="mute"] i');
+                    muteButton.classList.toggle('bi-volume-up-fill');
+                    muteButton.classList.toggle('bi-volume-mute-fill');
+                    break;
+            }
+        });
+    });
+
+    // All event handlers have been moved into the DOMContentLoaded event listener above
+
+    // Add hover-to-preview functionality for video items in the artists grid
+    document.querySelectorAll('.video-item').forEach(function(item) {
+        // Create overlay elements for play/pause indicators
+        var overlayEl = document.createElement('div');
+        overlayEl.className = 'video-preview-overlay';
+        
+        var iconEl = document.createElement('i');
+        iconEl.className = 'bi bi-play-circle-fill preview-icon';
+        overlayEl.appendChild(iconEl);
+        
+        item.appendChild(overlayEl);
+        
+        // Get the video element within the item
+        var videoEl = item.querySelector('video');
+        if (!videoEl) return; // Skip if no video element found
+        
+        // Set initial attributes
+        videoEl.muted = true;
+        videoEl.preload = 'metadata';
+        videoEl.loop = true;
+        
+        // Mouse enter - start preview
+        item.addEventListener('mouseenter', function() {
+            videoEl.play();
+            iconEl.classList.remove('bi-play-circle-fill');
+            iconEl.classList.add('bi-pause-circle-fill');
+            overlayEl.classList.add('playing');
+        });
+        
+        // Mouse leave - stop preview
+        item.addEventListener('mouseleave', function() {
+            videoEl.pause();
+            videoEl.currentTime = 0;
+            iconEl.classList.remove('bi-pause-circle-fill');
+            iconEl.classList.add('bi-play-circle-fill');
+            overlayEl.classList.remove('playing');
+        });
+        
+        // Toggle play/pause on overlay click
+        overlayEl.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent triggering the modal
+            
+            if (videoEl.paused) {
+                videoEl.play();
+                iconEl.classList.remove('bi-play-circle-fill');
+                iconEl.classList.add('bi-pause-circle-fill');
+                overlayEl.classList.add('playing');
+            } else {
+                videoEl.pause();
+                iconEl.classList.remove('bi-pause-circle-fill');
+                iconEl.classList.add('bi-play-circle-fill');
+                overlayEl.classList.remove('playing');
+            }
+        });
     });
 
     // News slider functionality
@@ -229,6 +403,7 @@
     });
   });
 })(jQuery);
+
 
 
 

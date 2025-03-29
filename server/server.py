@@ -63,6 +63,9 @@ if __name__ == "__main__":
     mimetypes.add_type('text/css', '.css')
     mimetypes.add_type('application/javascript', '.js')
     mimetypes.add_type('image/svg+xml', '.svg')
+    mimetypes.add_type('video/mp4', '.mp4')
+    mimetypes.add_type('video/webm', '.webm')
+    mimetypes.add_type('video/ogg', '.ogv')
     
     Handler = NoCacheHTTPRequestHandler
     
