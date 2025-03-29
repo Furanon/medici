@@ -1,0 +1,501 @@
+HTTrack3.49-2 launched on Sat, 29 Mar 2025 11:29:25 at https://www.instagram.com/paradise_pai/ *.jpg *.jpeg *.png *.gif *.webp
+(httrack https://www.instagram.com/paradise_pai/ -O ./instagram-download -%v -%P -N100 -p7 -%e0 -A25000000 *.jpg *.jpeg *.png *.gif *.webp )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:29:25	Warning: 	* security warning: maximum bandwidth limited to 250000 to avoid server overload
+11:29:55	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link *.jpg/robots.txt (from primary/primary)
+11:29:56	Warning: 	Retry after error -5 (Unable to get server's address: nodename nor servname provided, or not known) at link *.jpg/ (from primary/primary)
+11:29:57	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link *.jpeg/robots.txt (from primary/primary)
+11:30:02	Warning: 	Retry after error -5 (Unable to get server's address: nodename nor servname provided, or not known) at link *.jpeg/ (from primary/primary)
+11:30:08	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link *.png/robots.txt (from primary/primary)
+11:30:09	Warning: 	Retry after error -5 (Unable to get server's address: nodename nor servname provided, or not known) at link *.png/ (from primary/primary)
+11:30:10	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link *.gif/robots.txt (from primary/primary)
+11:30:16	Warning: 	Retry after error -5 (Unable to get server's address: nodename nor servname provided, or not known) at link *.gif/ (from primary/primary)
+11:30:21	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link *.webp/robots.txt (from primary/primary)
+11:30:23	Warning: 	Retry after error -5 (Unable to get server's address: nodename nor servname provided, or not known) at link *.webp/ (from primary/primary)
+11:32:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/)
+11:37:21	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link *.jpg/ (from primary/primary)
+11:37:32	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link *.jpeg/ (from primary/primary)
+11:37:33	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link *.png/ (from primary/primary)
+11:37:34	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link *.gif/ (from primary/primary)
+11:37:41	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link *.webp/ (from primary/primary)
+11:40:31	Error: 	Exit requested by shell or user
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/vzy417 (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/a6wZSt (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/2GasTq (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/+JEgiZ (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:33	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/9nEeAW (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/2GasTq (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/vzy417 (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/a6wZSt (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/+JEgiZ (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:37	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/9nEeAW (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/2GasTq (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/vzy417 (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/a6wZSt (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/+JEgiZ (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:40	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/9nEeAW (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/2GasTq (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/vzy417 (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/a6wZSt (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/+JEgiZ (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:44	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/9nEeAW (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/2GasTq (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/vzy417 (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/a6wZSt (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/+JEgiZ (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:48	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/9nEeAW (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=sr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=sr (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=uk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=uk (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=zh-hk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=zh-hk (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=es-la
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=es-la (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=he
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=he (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=fa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=fa (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=ar
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=ar (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=ur
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=ur (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=en-gb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=en-gb (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=sw-ke
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=sw-ke (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=ha-ng
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=ha-ng (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=am-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=am-et (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/?hl=om-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/?hl=om-et (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/vzy417/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/vzy417/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/vzy417 (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/a6wZSt (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/2GasTq (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/+JEgiZ (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/9nEeAW (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=en
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=en (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=fr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=fr (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=it
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=it (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=de
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=de (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=es
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=es (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-cn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-cn (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-tw
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-tw (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ja
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ja (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ko
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ko (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=pt
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=pt (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=pt-br
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=pt-br (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=af
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=af (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=cs
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=cs (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=da
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=da (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=el
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=el (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=fi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=fi (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=hr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=hr (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=hu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=hu (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=id
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=id (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ms
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ms (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=nb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=nb (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=nl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=nl (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=pl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=pl (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ru
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ru (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=sk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=sk (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=sv
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=sv (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=th
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=th (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=tl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=tl (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=tr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=tr (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=hi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=hi (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=bn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=bn (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=gu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=gu (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=kn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=kn (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ml
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ml (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=mr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=mr (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=pa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=pa (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ta
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ta (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=te
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=te (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ne
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ne (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=si
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=si (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=vi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=vi (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=bg
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=bg (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=fr-ca
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=fr-ca (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ro
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ro (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=sr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=sr (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=uk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=uk (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-hk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=zh-hk (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=es-la
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=es-la (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=he
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=he (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=fa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=fa (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ar
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ar (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ur
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ur (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=en-gb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=en-gb (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=sw-ke
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=sw-ke (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=ha-ng
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=ha-ng (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=am-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=am-et (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/?hl=om-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/?hl=om-et (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/a6wZSt/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/a6wZSt/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/2GasTq (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/vzy417 (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/a6wZSt (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/+JEgiZ (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/9nEeAW (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=en
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=en (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fr (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=it
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=it (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=de
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=de (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=es
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=es (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-cn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-cn (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-tw
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-tw (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ja
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ja (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ko
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ko (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pt
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pt (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pt-br
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pt-br (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=af
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=af (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=cs
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=cs (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=da
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=da (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=el
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=el (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fi (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hr (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hu (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=id
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=id (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ms
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ms (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=nb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=nb (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=nl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=nl (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pl (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ru
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ru (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sk (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sv
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sv (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=th
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=th (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=tl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=tl (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=tr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=tr (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=hi (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=bn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=bn (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=gu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=gu (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=kn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=kn (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ml
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ml (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=mr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=mr (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=pa (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ta
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ta (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=te
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=te (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ne
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ne (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=si
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=si (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=vi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=vi (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=bg
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=bg (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fr-ca
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fr-ca (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ro
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ro (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sr (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=uk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=uk (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-hk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=zh-hk (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=es-la
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=es-la (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=he
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=he (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=fa (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ar
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ar (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ur
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ur (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=en-gb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=en-gb (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sw-ke
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=sw-ke (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ha-ng
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=ha-ng (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=am-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=am-et (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/?hl=om-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/?hl=om-et (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/+JEgiZ/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/+JEgiZ/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/2GasTq (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/vzy417 (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/a6wZSt (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/+JEgiZ (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/9nEeAW (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=en
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=en (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=fr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=fr (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=it
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=it (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=de
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=de (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=es
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=es (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-cn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-cn (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-tw
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-tw (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ja
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ja (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ko
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ko (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=pt
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=pt (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=pt-br
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=pt-br (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=af
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=af (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=cs
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=cs (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=da
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=da (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=el
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=el (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=fi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=fi (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=hr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=hr (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=hu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=hu (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=id
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=id (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ms
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ms (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=nb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=nb (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=nl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=nl (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=pl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=pl (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ru
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ru (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=sk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=sk (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=sv
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=sv (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=th
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=th (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=tl
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=tl (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=tr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=tr (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=hi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=hi (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=bn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=bn (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=gu
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=gu (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=kn
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=kn (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ml
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ml (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=mr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=mr (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=pa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=pa (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ta
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ta (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=te
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=te (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ne
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ne (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=si
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=si (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=vi
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=vi (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=bg
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=bg (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=fr-ca
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=fr-ca (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ro
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ro (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=sr
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=sr (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=uk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=uk (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-hk
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=zh-hk (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=es-la
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=es-la (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=he
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=he (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=fa
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=fa (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ar
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ar (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ur
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ur (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=en-gb
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=en-gb (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=sw-ke
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=sw-ke (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=ha-ng
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=ha-ng (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=am-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=am-et (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/?hl=om-et
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/?hl=om-et (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: https://www.instagram.com/paradise_pai/9nEeAW/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link https://www.instagram.com/paradise_pai/9nEeAW/android-app://com.instagram.android/https/instagram.com/_u/paradise_pai/ (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/vzy417 (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/a6wZSt (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/2GasTq (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/+JEgiZ (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/9nEeAW (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Warning: 	File not added due to mirror cancel: *.jpg/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link *.jpg/ (from primary/primary)
+11:40:50	Warning: 	File not added due to mirror cancel: *.jpeg/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link *.jpeg/ (from primary/primary)
+11:40:50	Warning: 	File not added due to mirror cancel: *.png/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link *.png/ (from primary/primary)
+11:40:50	Warning: 	File not added due to mirror cancel: *.gif/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link *.gif/ (from primary/primary)
+11:40:50	Warning: 	File not added due to mirror cancel: *.webp/
+11:40:50	Error: 	"mirror stopped by user" (-1) at link *.webp/ (from primary/primary)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/theaustralian.com.au (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/news.com.au (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/kollosche.com.au (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/theaustralian.com.au/awstrack.me (from https://www.instagram.com/paradise_pai/theaustralian.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/theaustralian.com.au (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/news.com.au (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/kollosche.com.au (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/news.com.au/awstrack.me (from https://www.instagram.com/paradise_pai/news.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/theaustralian.com.au (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/news.com.au (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/kollosche.com.au (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/kollosche.com.au/awstrack.me (from https://www.instagram.com/paradise_pai/kollosche.com.au/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/theaustralian.com.au (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/news.com.au (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/kollosche.com.au (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/awstrack.me/awstrack.me (from https://www.instagram.com/paradise_pai/awstrack.me/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/theaustralian.com.au (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/news.com.au (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/kollosche.com.au (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/2GasTq/awstrack.me (from https://www.instagram.com/paradise_pai/2GasTq/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/theaustralian.com.au (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/news.com.au (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/kollosche.com.au (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/vzy417/awstrack.me (from https://www.instagram.com/paradise_pai/vzy417/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/theaustralian.com.au (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/news.com.au (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/kollosche.com.au (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/a6wZSt/awstrack.me (from https://www.instagram.com/paradise_pai/a6wZSt/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/theaustralian.com.au (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/news.com.au (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/kollosche.com.au (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/+JEgiZ/awstrack.me (from https://www.instagram.com/paradise_pai/+JEgiZ/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/theaustralian.com.au (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/news.com.au (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/kollosche.com.au (from https://www.instagram.com/paradise_pai/9nEeAW/)
+11:40:50	Error: 	"Not Found" (404) at link https://www.instagram.com/paradise_pai/9nEeAW/awstrack.me (from https://www.instagram.com/paradise_pai/9nEeAW/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 11 minutes 25 seconds : 692 links scanned, 396 files written (311053466 bytes overall) [70349644 bytes received at 102700 bytes/sec], 344124480 bytes transferred using HTTP compression in 484 files, ratio 19%, 19.7 requests per connection
+(286 errors, 204 warnings, 0 messages)
