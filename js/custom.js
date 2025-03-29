@@ -406,6 +406,7 @@
     // Initialize Masonry
     var $grid = $('.artists-grid').masonry({
       itemSelector: '.video-item',
+      columnWidth: '.grid-sizer',
       fitWidth: true,
       percentPosition: true,
       gutter: 16

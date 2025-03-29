@@ -213,6 +213,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="artists-grid">
+                            <div class="grid-sizer"></div>
                             <!-- Video elements grid -->
                             <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="0" data-media-type="video">
                                 <video class="">
@@ -398,7 +399,6 @@
                 --grid-gap: 12px;
             }
             .artists-grid {
-                width: 100%;
                 margin: 0 auto;
             }
             .video-item {
@@ -407,53 +407,31 @@
                 padding: calc(var(--grid-gap) / 2);
             }
 
-            .video-item.tiny {
-                width: 20%;
-            }
-
-            .video-item.small {
-                width: 25%;
-            }
-
-            .video-item.medium {
-                width: 33.333%;
-            }
-
-            .video-item.large {
-                width: 40%;
-            }
-
-            .video-item.wide {
-                width: 50%;
-            }
-
-            .video-item.tall {
-                width: 30%;
-            }
+            /* Size classes maintained for semantic meaning but without width constraints */
+            /* Grid-sizer element for Masonry */
+            .grid-sizer,
+            .video-item.tiny { width: 20%; }
+            .video-item.small { width: 25%; }
+            .video-item.medium { width: 33.333%; }
+            .video-item.large { width: 40%; }
+            .video-item.wide { width: 50%; }
+            .video-item.tall { width: 30%; }
             
             /* Aspect ratio classes */
             .video-item.aspect-square {
                 aspect-ratio: 1/1;
-                grid-column: span 1;
-                grid-row: span 1;
             }
             
             .video-item.aspect-portrait {
                 aspect-ratio: 2/3;
-                grid-column: span 1;
-                grid-row: span 2;
             }
             
             .video-item.aspect-landscape {
                 aspect-ratio: 16/9;
-                grid-column: span 2;
-                grid-row: span 1;
             }
             
             .video-item.aspect-wide {
                 aspect-ratio: 16/9;
-                grid-column: span 3;
-                grid-row: span 2;
             }
             
             /* Aspect ratio classes using padding-top technique */
@@ -496,37 +474,7 @@
             }
             
             /* Media queries for responsive grid */
-            @media screen and (max-width: 1200px) {
-                .video-item.wide { width: 40%; }
-                .video-item.large { width: 33.333%; }
-                .video-item.tall { width: 25%; }
-            }
-            
-            @media screen and (max-width: 991px) {
-                .video-item.tiny { width: 25%; }
-                .video-item.wide, 
-                .video-item.large { width: 33.333%; }
-                .video-item.tall { width: 30%; }
-            }
-            
-            @media screen and (max-width: 768px) {
-                .video-item.tiny,
-                .video-item.small { width: 33.333%; }
-                .video-item.medium,
-                .video-item.large,
-                .video-item.wide,
-                .video-item.tall { width: 50%; }
-            }
-            
-            @media screen and (max-width: 480px) {
-                .video-item.tiny,
-                .video-item.small,
-                .video-item.medium { width: 50%; }
-                .video-item.large,
-                .video-item.wide,
-                .video-item.tall { width: 100%; }
-            }
-            
+            /* Masonry handles responsive layout, media queries not needed for widths */
             .video-play-icon {
                 position: absolute;
                 top: 50%;
@@ -1219,9 +1167,10 @@
             function initMasonry() {
                 const masonry = new Masonry(grid, {
                     itemSelector: '.video-item',
-                    fitWidth: true,
+                    columnWidth: '.grid-sizer',
                     percentPosition: true,
-                    gutter: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gap') || '12')
+                    gutter: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gap') || '12'),
+                    fitWidth: true
                 });
                 
                 // Debounced resize handler
