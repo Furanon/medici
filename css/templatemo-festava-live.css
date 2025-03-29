@@ -801,9 +801,12 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 .video-item {
-  float: left;
-  margin-bottom: 12px;
-  padding: 0 6px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-medium);
 }
 
 .video-item video {
@@ -887,13 +890,6 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 /* Video-specific styling */
-.video-item {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .video-item:hover {
     transform: translateY(-5px) scale(1.02);
