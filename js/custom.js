@@ -399,11 +399,33 @@
 
         bg.style.width = width + 'px';
         bg.style.height = height + 'px';
+        bg.style.height = height + 'px';
         bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+    });
+
+    // Initialize Masonry
+    var $grid = $('.artists-grid').masonry({
+      itemSelector: '.video-item',
+      fitWidth: true,
+      percentPosition: true,
+      gutter: 12
+    });
+
+    // Re-layout Masonry when images are loaded
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry('layout');
+    });
+
+    // Re-layout Masonry on window resize (with debounce)
+    var resizeTimer;
+    $(window).on('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function() {
+        $grid.masonry('layout');
+      }, 250);
     });
   });
 })(jQuery);
-
 
 
 
