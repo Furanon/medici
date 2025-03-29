@@ -497,6 +497,7 @@
                                     <img src="./images/firepics/image2.webp" class="d-block w-100" alt="Artist 2">
                                 </div>
                             </div>
+                            
                             <!-- Carousel Controls -->
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -506,80 +507,100 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
-                        </div> <!-- Close carousel -->
-                    </div> <!-- Close modal-body -->
-                </div> <!-- Close modal-content -->
-            </div> <!-- Close modal-dialog -->
-        </div> <!-- Close modal -->
+            <div class="container">
+                <div class="row"></div>
 
-<section class="schedule-section section-padding" id="section_4">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="text-white mb-4">Event Schedule</h2>
-                
-                <div class="table-responsive">
-                    <table class="schedule-table table table-dark">
-                        <thead>
-                            <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Wednesday</th>
-                                <th scope="col">Thursday</th>
-                                <th scope="col">Friday</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            <tr>
-                                <th scope="row">Day 1</th>
-                                <td class="table-background-image-wrap pop-background-image">
-                                    <h3>Fire Night</h3>
-                                    <p class="mb-2">5:00 - 7:00 PM</p>
-                                    <p>By the Circus</p>
-                                    <div class="section-overlay"></div>
-                                </td>
-                                <td style="background-color: #F3DCD4"></td>
-                                <td class="table-background-image-wrap rock-background-image">
-                                    <h3>Real Jungle Party</h3>
-                                    <p class="mb-2">7:00 - 0?:00 PM</p>
-                                    <p>By Pretty Lights</p>
-                                    <div class="section-overlay"></div>
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">Day 2</th>
-                                <td style="background-color: #ECC9C7"></td>
-                                <td>
-                                    <h3>Yoga </h3>
-                                    <p class="mb-2">6:30 - 9:30 PM</p>
-                                    <p>By Life Itself</p>
-                                </td>
-                                <td style="background-color: #D9E3DA"></td>
-                            </tr>
-                            
-                            <tr>
-                                <th scope="row">Day 3</th>
-                                <td class="table-background-image-wrap country-background-image">
-                                    <h3>Staff Manipulation - Pro </h3>
-                                    <p class="mb-2">4:30 - 7:30 PM</p>
-                                    <p>By Eternal Sunshine</p>
-                                    <div class="section-overlay"></div>
-                                </td>
-                                <td style="background-color: #D1CFC0"></td>
-                                <td>
-                                    <h3>Free Styles</h3>
-                                    <p class="mb-2">6:00 - 10:00 PM</p>
-                                    <p>By all of us</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">Event Schedule</h1>
+
+                            <div class="table-responsive">
+                                <table class="schedule-table table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+
+                                            <th scope="col">Wednesday</th>
+
+                                            <th scope="col">Thursday</th>
+
+                                            <th scope="col">Friday</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Day 1</th>
+
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Fire Night</h3>
+
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+
+                                                <p>By the Circus</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #F3DCD4"></td>
+
+                                            <td class="table-background-image-wrap rock-background-image">
+                                                <h3>Real Jungle Party</h3>
+
+                                                <p class="mb-2">7:00 - 0?:00 PM</p>
+
+                                                <p>By Pretty Lights</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 2</th>
+
+                                            <td style="background-color: #ECC9C7"></td>
+
+                                            <td>
+                                                <h3>Yoga </h3>
+
+                                                <p class="mb-2">6:30 - 9:30 PM</p>
+
+                                                <p>By Life Itself</p>
+                                            </td>
+
+                                            <td style="background-color: #D9E3DA"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 3</th>
+
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Staff Manipulation - Pro </h3>
+
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+
+                                                <p>By Eternal Sunshine</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+
+                                            <td>
+                                                <h3>Free Styles</h3>
+
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+
+                                                <p>By all of us</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
         <section class="pricing-section section-padding section-bg" id="section_5">
