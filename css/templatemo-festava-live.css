@@ -671,13 +671,18 @@ strong {
 /* JavaScript to handle mouse movement and apply the effect */
 document.querySelectorAll('.about-image').forEach(image => {
     image.addEventListener('mousemove', (e) => {
-        const rect = image.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const rotateX = ((y - centerY) / centerY) * 20; // Increase the tilt effect
-        const rotateY = ((x - centerX) / centerX) * -20; // Increase the tilt effect
+            /* Size classes maintained for semantic meaning but without width constraints */
+            /* Grid-sizer element for Masonry */
+            /* Grid-sizer element is critical for Masonry layout */
+            .grid-sizer {
+                width: 20%;
+                position: absolute; /* Position it absolutely */
+                visibility: hidden; /* Hide but keep in layout flow */
+                z-index: -1; /* Ensure it doesn't interfere with other elements */
+            }
+            .video-item.large { width: 40%; }
+            .video-item.wide { width: 50%; }
+            .video-item.tall { width: 30%; }
         image.style.setProperty('--rotate-x', `${rotateX}deg`);
         image.style.setProperty('--rotate-y', `${rotateY}deg`);
     });
@@ -819,17 +824,22 @@ document.querySelectorAll('.about-image').forEach(image => {
 
 .artists-section {
   padding: 50px 0;
+  overflow: hidden; /* Prevent any overflow issues */
 }
-
 .artists-grid {
-  margin: 0 auto;
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
+  margin: 0 auto; /* Center the grid */
+  /* Set width to auto to allow Masonry to control width with fitWidth */
+  position: relative; /* Required for absolute positioning of grid-sizer */
+  /* No grid positioning properties - Masonry handles all layout */
+  /* For Masonry to work properly, only container dimensions should be defined here */
 }
 
-/* Add grid-sizer element for columnWidth */
-.grid-sizer,
+/* Size definitions for Masonry to determine column widths */
+.grid-sizer {
+  width: 20%; /* Base width for grid sizing */
+  visibility: hidden; /* Hide the element */
+}
+
 .video-item.tiny {
   width: 20%;
 }
@@ -855,12 +865,16 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 .video-item {
-  position: relative;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius-medium);
+  margin-bottom: var(--grid-gap); /* Use CSS variable for consistent spacing */
+  float: left; /* Required for Masonry to work properly */
+  padding: calc(var(--grid-gap) / 2); /* Add padding between items */
+  transform: none; /* Remove any transforms that might interfere with layout */
+  /* Masonry will handle all item positioning within the grid */
 }
 
 .video-item video {
@@ -870,29 +884,7 @@ document.querySelectorAll('.about-image').forEach(image => {
   border-radius: var(--border-radius-medium);
 }
 
-.video-item.tiny {
-  /* Size will be handled by Masonry */
-}
-
-.video-item.small {
-  /* Size will be handled by Masonry */
-}
-
-.video-item.medium {
-  /* Size will be handled by Masonry */
-}
-
-.video-item.large {
-  /* Size will be handled by Masonry */
-}
-
-.video-item.wide {
-  /* Size will be handled by Masonry */
-}
-
-.video-item.tall {
-  /* Size will be handled by Masonry */
-}
+/* Video item size classes are defined above with their width percentages */
 
 /* Update responsive layouts */
 @media screen and (max-width: 1200px) {
@@ -1002,11 +994,10 @@ document.querySelectorAll('.about-image').forEach(image => {
 .video-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    /* Removed unnecessary z-index */
 }
 
 .video-play-icon {
-    position: absolute;
+    position: absolute; /* Keep this for the play icon positioning */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1050,12 +1041,7 @@ document.querySelectorAll('.about-image').forEach(image => {
 
 /* Media query updates for video items */
 @media screen and (max-width: 1200px) {
-    .artists-grid {
-        /* Grid properties removed to allow Masonry to handle layout */
-    }
-    
-    /* Removed grid-column property to allow Masonry to handle layout */
-    
+    /* Width definitions only for responsive sizing */
     .video-play-icon {
         width: 50px;
         height: 50px;
@@ -1063,26 +1049,14 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 @media screen and (max-width: 991px) {
-    .artists-grid {
-        gap: 16px;
-    }
-    
-    /* Removed grid-column and grid-row properties to allow Masonry to handle layout */
+    /* Width definitions are maintained above */
 }
 
 @media screen and (max-width: 768px) {
-    .artists-grid {
-        /* Grid properties removed to allow Masonry to handle layout */
-    }
-    
-    /* Removed grid-column and grid-row properties to allow Masonry to handle layout */
+    /* Width definitions are maintained above */
 }
 
 @media screen and (max-width: 480px) {
-    .artists-grid {
-        gap: 16px;
-    }
-    
     .video-item {
         aspect-ratio: var(--grid-aspect-ratio-1x1);
     }
@@ -1542,11 +1516,8 @@ document.querySelectorAll('.about-image').forEach(image => {
   }
 }
 
-/* Aspect ratio classes */
-.video-item {
-  position: relative;
-}
-
+/* Aspect ratio classes - providing container dimensions only */
+/* Video-item positioning is handled by Masonry for layout */
 .video-item:before {
   content: '';
   display: block;
@@ -1573,7 +1544,7 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 .video-item video {
-  position: absolute;
+  position: absolute; /* Keep this for aspect ratio system */
   top: 0;
   left: 0;
   width: 100%;
@@ -1582,21 +1553,14 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 /* Video overlay and play icon styles */
-.video-item {
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: var(--border-radius-medium);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
 .video-item:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .video-item .video-play-icon {
-  position: absolute;
+  position: absolute; /* This position needs to be kept for the icon to appear over the video */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1607,7 +1571,6 @@ document.querySelectorAll('.about-image').forEach(image => {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Keeping z-index: 2 for video play icon as it needs to be above the video overlay */
   z-index: 2;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -1616,6 +1579,11 @@ document.querySelectorAll('.about-image').forEach(image => {
 .video-item:hover .video-play-icon {
   transform: translate(-50%, -50%) scale(1.1);
   background-color: var(--primary-color);
+}
+.video-item {
+  position: relative; /* This is needed only for absolute positioning of child elements (overlay, play icon) */
+  /* All layout positioning is handled by Masonry */
+  /* This position:relative doesn't interfere with Masonry layout positioning */
 }
 
 .video-item::after {
@@ -1628,6 +1596,8 @@ document.querySelectorAll('.about-image').forEach(image => {
   background: rgba(0, 0, 0, 0.2);
   pointer-events: none;
   border-radius: var(--border-radius-medium);
+  z-index: 1; /* Ensure overlay appears above the video but below the play icon */
+}
 }
 
 @media screen and (max-width: 768px) {
