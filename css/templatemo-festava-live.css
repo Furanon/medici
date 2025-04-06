@@ -1194,11 +1194,33 @@ document.querySelectorAll('.about-image').forEach(image => {
 /*---------------------------------------
   PRICING              
 -----------------------------------------*/
+.pricing-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .pricing-thumb {
-  border: 5px dotted var(--dark-color);
+  border: 5px dotted rgba(0, 0, 0, 0.3);
   border-radius: var(--border-radius-medium);
   position: relative;
   padding: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+.pricing-thumb:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 .pricing-thumb h3 small {
@@ -1234,6 +1256,16 @@ document.querySelectorAll('.about-image').forEach(image => {
   top: 0;
   right: 0;
   margin: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 5;
+}
+
+.pricing-thumb:hover .pricing-tag {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pricing-tag span {
