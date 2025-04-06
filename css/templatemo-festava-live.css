@@ -62,6 +62,14 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
+  background: -webkit-linear-gradient(
+    180deg,
+    var(--gradient-color-1),
+    var(--gradient-color-2),
+    var(--gradient-color-3),
+    var(--gradient-color-4),
+    var(--gradient-color-5)
+  );
   background: linear-gradient(
     180deg,
     var(--gradient-color-1),
@@ -70,7 +78,9 @@ body::before {
     var(--gradient-color-4),
     var(--gradient-color-5)
   );
+  -webkit-background-size: 100% 500%;
   background-size: 100% 500%;
+  -webkit-animation: gradientAnimation 15s ease infinite;
   animation: gradientAnimation 15s ease infinite;
   z-index: -2;
   pointer-events: none;
@@ -243,8 +253,9 @@ strong {
   SECTION               
 -----------------------------------------*/
 .section-padding {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding: 100px 0;
+  min-height: 100vh;
+  position: relative;
 }
 
 .section-bg {
@@ -259,7 +270,8 @@ strong {
   pointer-events: none;
   width: 100%;
   height: 100%;
-  opacity: 0.35;
+  opacity: 0.45;
+  z-index: 1;
 }
 
 .section-overlay + .container {
@@ -373,7 +385,7 @@ strong {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Ensure the video is behind other elements */
+  z-index: 0; /* Set to 0 according to the plan */
 }
 
 .custom-video {
@@ -413,7 +425,7 @@ strong {
 
 .navbar {
   background: transparent !important; /* Ensure initially transparent */
-  z-index: 9;
+  z-index: 10; /* Increase to 10 according to the plan */
   position: fixed; /* Use fixed position */
   top: 0; /* Align it to the top of the page */
   width: 100%; /* Ensure it spans the full width */
@@ -557,13 +569,13 @@ strong {
 }
 
 .hero-section .section-overlay {
-  z-index: 2;
+  z-index: 1;
   opacity: 0.45;
 }
 
 .hero-section .container {
   position: relative;
-  z-index: 2;
+  /* Removed z-index as it's not strictly needed, content is positioned using normal flow */
   height: 100%;
   padding-bottom: 50px;
 }
@@ -706,12 +718,17 @@ document.querySelectorAll('.about-image').forEach(image => {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .ticket-form {
   background: rgba(255, 255, 255, 0.77); /* 77% opacity */
   border-radius: var(--border-radius-medium);
   padding: 50px;
+  position: relative;
+  z-index: 5;
 }
 
 .ticket-form .form-check {
@@ -795,6 +812,9 @@ document.querySelectorAll('.about-image').forEach(image => {
 
 .artists-grid {
   margin: 0 auto;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 }
 
 /* Add grid-sizer element for columnWidth */
@@ -971,7 +991,7 @@ document.querySelectorAll('.about-image').forEach(image => {
 .video-item:hover {
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    z-index: 1;
+    /* Removed unnecessary z-index */
 }
 
 .video-play-icon {
@@ -1083,6 +1103,11 @@ document.querySelectorAll('.about-image').forEach(image => {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  min-height: 100vh;
 }
 .table-responsive {
 	filter: drop-shadow(2px 2px 4px #606060);
@@ -1159,12 +1184,12 @@ document.querySelectorAll('.about-image').forEach(image => {
 }
 
 .schedule-table h3,
+.schedule-table h3,
 .schedule-table p {
   color: var(--white-color);
   position: relative;
-  z-index: 2;
+  /* Removed unnecessary z-index, text will remain in normal flow */
 }
-
 
 /*---------------------------------------
   PRICING              
@@ -1232,10 +1257,22 @@ document.querySelectorAll('.about-image').forEach(image => {
   border-radius: var(--border-radius-medium);
 }
 
+.contact-section {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 
 /*---------------------------------------
   CUSTOM FORM               
 -----------------------------------------*/
+.custom-form {
+  position: relative;
+  z-index: 5;
+}
+
 .custom-form .form-control {
   color: var(--p-color);
   margin-bottom: 24px;
@@ -1527,6 +1564,7 @@ document.querySelectorAll('.about-image').forEach(image => {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Keeping z-index: 2 for video play icon as it needs to be above the video overlay */
   z-index: 2;
   transition: all 0.3s ease;
   pointer-events: none;
@@ -1559,6 +1597,24 @@ document.querySelectorAll('.about-image').forEach(image => {
 /*---------------------------------------
   GRADIENT ANIMATION              
 -----------------------------------------*/
+@-webkit-keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  50% {
+    background-position: 0% 100%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    background-position: 0% 0%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 0%;
