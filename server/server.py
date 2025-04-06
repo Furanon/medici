@@ -2,30 +2,63 @@
 import http.server
 import socketserver
 import os
-import mimetypes
 
-# Extend the SimpleHTTPRequestHandler to add no-cache headers
-class NoCacheHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
+class ChunkedHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
+    def __init__(self, *args, directory=None, **kwargs):
         super().__init__(*args, directory=os.getcwd(), **kwargs)
-    
+        
     def end_headers(self):
-        # Add headers to prevent caching
-        self.send_header("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0")
-        self.send_header("Pragma", "no-cache")
-        self.send_header("Expires", "0")
+        # Add no-cache headers
+        self.send_header('Cache-Control', 'no-cache, no-store, must-revalidate')
+        self.send_header('Pragma', 'no-cache')
+        self.send_header('Expires', '0')
         super().end_headers()
+        
+    def copyfile(self, source, outputfile):
+        """Copy data from source to outputfile in chunks to prevent buffer issues"""
+        CHUNK_SIZE = 64 * 1024  # 64KB chunks
+        while True:
+            buf = source.read(CHUNK_SIZE)
+            if not buf:
+                break
+            try:
+                outputfile.write(buf)
+            except (ConnectionAbortedError, BrokenPipeError):
+                # Handle client disconnection gracefully
+                break
+            except OSError as e:
+                if e.errno == 55:  # No buffer space available
+                    # Wait briefly and retry
+                    import time
+                    time.sleep(0.1)
+                    try:
+                        outputfile.write(buf)
+                    except:
+                        break
+                else:
+                    raise
+
+def run(server_class=socketserver.TCPServer):
+    # Increase the request queue size
+    server_class.request_queue_size = 50
     
-    def guess_type(self, path):
-        # Enhanced MIME type handling
-        mimetype = mimetypes.guess_type(path)[0]
-        
-        if mimetype is None:
-            # Default to binary if MIME type is unknown
-            mimetype = 'application/octet-stream'
-        
-        # Common web file types
-        if path.endswith('.js'):
+    # Allow address reuse
+    server_class.allow_reuse_address = True
+    
+    port = 8000
+    handler = ChunkedHTTPRequestHandler
+    
+    with server_class(("", port), handler) as httpd:
+        print(f"Serving at http://localhost:{port}")
+        print("No-cache headers enabled - browser will always load fresh content")
+        print("Press Ctrl+C to stop the server")
+        try:
+            httpd.serve_forever()
+        except KeyboardInterrupt:
+            print("\nServer stopped.")
+
+if __name__ == "__main__":
+    run()
             return 'application/javascript'
         elif path.endswith('.css'):
             return 'text/css'

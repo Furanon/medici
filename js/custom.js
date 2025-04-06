@@ -51,28 +51,10 @@
       });
     }
 
-    // Open gallery modal on click
-    $('#open-gallery').on('click', function() {
-      var galleryModal = new bootstrap.Modal($('#photoGalleryModal')[0]);
-      galleryModal.show();
-    });
-
-    // Open ticket form modal on click
-    $('#open-ticket-form').on('click', function() {
-      var ticketFormModal = new bootstrap.Modal($('#ticketFormModal')[0]);
-      ticketFormModal.show();
-    });
-
-    // Open ticket form modal on fundraiser button click
-    $('#fundraiser-button').on('click', function() {
-      var ticketFormModal = new bootstrap.Modal($('#ticketFormModal')[0]);
-      ticketFormModal.show();
-    });
-
-    // Sticky navbar functionality
+    // Add scroll handler for navbar visibility
     $(window).on('scroll', function() {
       if ($(window).scrollTop() > 50) {
-        $('.navbar').addClass('is-sticky').css('background-color', 'rgba(248, 203, 46, 0.4)').css('opacity', '1');
+        $('.navbar').addClass('is-sticky').css('background-color', 'var(--dark-color)').css('opacity', '1');
         $('.navbar, .navbar-nav .nav-link, .navbar-brand, .social-icon-link, .wonderland-text').addClass('is-visible');
       } else {
         $('.navbar').removeClass('is-sticky').css('background-color', 'transparent').css('opacity', '0');
@@ -104,11 +86,11 @@
 
     // Initialize all Bootstrap components
     document.addEventListener('DOMContentLoaded', function() {
-        // Initialize all modals
-        var modals = document.querySelectorAll('.modal');
-        modals.forEach(function(modal) {
-            new bootstrap.Modal(modal);
-        });
+        // Initialize gallery modal only
+        var galleryModal = document.getElementById('imageModal');
+        if (galleryModal) {
+            new bootstrap.Modal(galleryModal);
+        }
 
         // Initialize carousel with proper settings using native Bootstrap 5
         var galleryCarousel = new bootstrap.Carousel(document.getElementById('carouselGallery'), {

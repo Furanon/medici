@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Paradise</title>
 
+    <!-- Resource hints for performance optimization -->
+    <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/bootstrap-icons.css" as="style">
+    <link rel="preload" href="css/templatemo-festava-live.css" as="style">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="images/firelotus.webp">
+
     <!-- CSS FILES -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-icons.css" rel="stylesheet">
@@ -23,7 +31,7 @@
                     <img src="images/firelotus.webp" alt="Paradise Logo" style="background: none; width: 50px; height: auto; border-radius: 50%;">
                 </a>
 
-                <a href="#" class="btn custom-btn fundraiser-btn d-lg-none ms-auto me-4" id="open-ticket-form">Courses</a>
+                <a href="ticket.html" class="btn custom-btn fundraiser-btn d-lg-none ms-auto me-4">Courses</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +68,7 @@
 
         <section class="hero-section" id="section_1">
             <div class="video-wrap">
-                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                <video autoplay="" loop="" muted="" preload="none" class="custom-video" poster="">
                     <source src="video/firesplash.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -162,46 +170,6 @@
             </div>
         </div>
 
-        <!-- Add a modal for the ticket form -->
-        <div class="modal fade" id="ticketFormModal" tabindex="-1" aria-labelledby="ticketFormModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title" id="ticketFormModalLabel">Course Booking</h2>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="custom-form ticket-form" action="#" method="post" role="form">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ticket-type" id="earlyBird" value="earlyBird" checked>
-                                <label class="form-check-label" for="earlyBird">
-                                    Early Bird - $120
-                                </label>
-                            </div>
-                            <div class="form-group"></div>
-                                <label for="ticket-amount">Donation</label>
-                                <input type="number" class="form-control" id="ticket-amount" name="ticket-amount" min="1" step="0.01" placeholder="Enter amount in USD" required>
-                            </div>
-                                </label>
-                            </div>
-                            <div class="form-group">
-                                <label for="ticket-name">Full Name</label>
-                                <input type="text" class="form-control" id="ticket-name" name="ticket-name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ticket-email">Email Address</label>
-                                <input type="email" class="form-control" id="ticket-email" name="ticket-email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="ticket-phone">Phone Number</label>
-                                <input type="tel" class="form-control" id="ticket-phone" name="ticket-phone" required>
-                            </div>
-                            <button type="submit" class="btn custom-btn">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <section class="artists-section section-padding" id="section_3">
             <div class="container">
@@ -217,20 +185,20 @@
                             <!-- Video elements grid -->
                             <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="0" data-media-type="video">
                                 <video class="">
+                                <video class="" preload="none" poster="./images/firepics/image1.webp" loading="lazy">
                                     <source src="./video/firevids/video1.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
-                                <div class="video-play-icon"></div>
                             </div>
                             <div class="video-item artists-image tiny ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="1" data-media-type="video">
-                                <video class="">
+                                <video class="" preload="none" poster="./images/firepics/image2.webp" loading="lazy">
                                     <source src="./video/firevids/video2.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <div class="video-play-icon"></div>
                             </div>
                             <div class="video-item artists-image medium ratio-4x3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="2" data-media-type="video">
-                                <video class="">
+                                <video class="" preload="none" poster="./images/firepics/image3.webp" loading="lazy">
                                     <source src="./video/firevids/video3.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -627,7 +595,7 @@
                                 <!-- Video carousel items -->
                                 <div class="carousel-item" data-media-type="video">
                                     <div class="video-container">
-                                        <video controls class="d-block w-100" poster="./images/firepics/image1.webp">
+                                        <video controls class="d-block w-100" poster="./images/firepics/image1.webp" preload="none" loading="lazy">
                                             <source src="./video/firevids/video1.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -649,7 +617,7 @@
                                 </div>
                                 <div class="carousel-item" data-media-type="video">
                                     <div class="video-container">
-                                        <video controls class="d-block w-100" poster="./images/firepics/image2.webp">
+                                        <video controls class="d-block w-100" poster="./images/firepics/image2.webp" preload="none" loading="lazy">
                                             <source src="./video/firevids/video2.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -671,7 +639,7 @@
                                 </div>
                                 <div class="carousel-item" data-media-type="video">
                                     <div class="video-container">
-                                        <video controls class="d-block w-100" poster="./images/firepics/image3.webp">
+                                        <video controls class="d-block w-100" poster="./images/firepics/image3.webp" preload="none" loading="lazy">
                                             <source src="./video/firevids/video3.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -765,7 +733,7 @@
                                     <img src="./images/firepics/image1.webp" class="d-block w-100" alt="Artist 1">
                                 </div>
                                 <div class="carousel-item" data-media-type="video">
-                                    <video class="d-block w-100" controls muted>
+                                    <video class="d-block w-100" controls muted preload="none" loading="lazy" poster="./images/firepics/image8.webp">
                                         <source src="./video/firevids/video8.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -1058,22 +1026,22 @@
                 <h5 class="site-footer-title mb-3">Links</h5>
                 <ul class="site-footer-links">
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Home</a>
+                        <a href="#section_1" class="site-footer-link click-scroll">Home</a>
                     </li>
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">About</a>
+                        <a href="#section_2" class="site-footer-link click-scroll">About</a>
                     </li>
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Artists</a>
+                        <a href="#section_3" class="site-footer-link click-scroll">Artists</a>
                     </li>
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Schedule</a>
+                        <a href="#section_4" class="site-footer-link click-scroll">Schedule</a>
                     </li>
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Pricing</a>
+                        <a href="#section_5" class="site-footer-link click-scroll">Pricing</a>
                     </li>
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Contact</a>
+                        <a href="#section_6" class="site-footer-link click-scroll">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -1091,7 +1059,7 @@
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
                 <h5 class="site-footer-title mb-3">Location</h5>
                 <p class="text-white d-flex mt-3 mb-2">Pai, Thailand</p>
-                <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                <a class="link-fx-1 color-contrast-higher mt-3 click-scroll" href="#section_6">
                     <span>Our Maps</span>
                     <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -1134,8 +1102,8 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/click-scroll.js"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js" defer></script>
     <script>
         document.querySelectorAll('.about-image').forEach(image => {
             image.addEventListener('mousemove', (e) => {
@@ -1161,6 +1129,37 @@
         document.addEventListener('DOMContentLoaded', function() {
             const grid = document.querySelector('.artists-grid');
             const videos = grid.querySelectorAll('video');
+            
+            // Implement lazy loading for videos when needed
+            function handleIntersection(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target;
+                        if (video.getAttribute('data-src')) {
+                            const source = video.querySelector('source');
+                            if (source) {
+                                source.src = video.getAttribute('data-src');
+                                video.load();
+                            }
+                            video.removeAttribute('data-src');
+                        }
+                        observer.unobserve(video);
+                    }
+                });
+            }
+            
+            // Setup intersection observer for videos
+            if ('IntersectionObserver' in window) {
+                const videoObserver = new IntersectionObserver(handleIntersection, {
+                    rootMargin: '100px 0px',
+                    threshold: 0.1
+                });
+                
+                videos.forEach(video => {
+                    videoObserver.observe(video);
+                });
+            }
+            
             let videosLoaded = 0;
             
             // Function to initialize Masonry
@@ -1224,7 +1223,9 @@
             left: 50%;
             width: 100%;
             height: 100%;
-            background: url('images/sparkles.png') no-repeat center;
+            /* Removing reference to missing image */
+            /* background: url('images/sparkles.png') no-repeat center; */
+            background: none;
             background-size: contain;
             animation: sparkle 1s infinite;
             pointer-events: none;
