@@ -304,7 +304,7 @@
                             <div class="pricing-footer">
                                 <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
                                     <span>Buy</span>
-                                    <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <span>Buy</span>
                                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                                             <circle cx="16" cy="16" r="15.5"></circle>
                                             <line x1="10" y1="18" x2="16" y2="12"></line>
@@ -315,79 +315,29 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-<section class="contact-section section-padding" id="section_5">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-lg-8 col-12 mx-auto">
-                <h2 class="text-center mb-4">Interested? Let's talk</h2>
-
-                <nav class="d-flex justify-content-center">
-                    <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
-                        role="tablist">
-                        <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
-                            data-bs-target="#nav-ContactForm" type="button" role="tab"
-                            aria-controls="nav-ContactForm" aria-selected="false">
-                            <h5>Contact Form</h5>
-                        </button>
-
-                        <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
-                            data-bs-target="#nav-ContactMap" type="button" role="tab"
-                            aria-controls="nav-ContactMap" aria-selected="false">
-                            <h5>Google Maps</h5>
-                        </button>
-                    </div>
-                </nav>
-
-                <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
-                        aria-labelledby="nav-ContactForm-tab">
-                        <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
-                            role="form">
-                            <div class="contact-form-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="text" name="contact-name" id="contact-name"
-                                            class="form-control" placeholder="Full name" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 col-12">
-                                        <input type="email" name="contact-email" id="contact-email"
-                                            pattern="[^ @]*@[^ @]*" class="form-control"
-                                            placeholder="Email address" required>
-                                    </div>
-                                </div>
-
-                                <input type="text" name="contact-company" id="contact-company"
-                                    class="form-control" placeholder="Company" required>
-
-                                <textarea name="contact-message" rows="3" class="form-control"
-                                    id="contact-message" placeholder="Message"></textarea>
-
-                                <div class="col-lg-4 col-md-10 col-8 mx-auto">
-                                    <button type="submit" class="form-control">Send message</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-
-                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
-                                aria-labelledby="nav-ContactMap-tab">
-                                <iframe class="google-map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30115.377383123938!2d98.40822367431643!3d19.350864400000017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30da814a12a3299f%3A0x5b6a76914e40ae56!2sParadise%20Pai!5e0!3m2!1sen!2sth!4v1743208472561!5m2!1sen!2sth"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <style>
+            /* All play button and icon styling completely removed */
+            
+            /* Add hover-to-play functionality */
+            .video-item:hover video {
+                transform: scale(1.05);
+                opacity: 0.9;
+            }
+            
+            /* Show fullscreen icon only on hover */
+            .video-fullscreen-icon {
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .video-item:hover .video-fullscreen-icon {
+                opacity: 1;
+            }
+        </style>
 
         <section class="artists-section section-padding" id="section_6">
             <div class="container">
@@ -400,161 +350,68 @@
                         <div class="artists-grid" style="margin: 0 auto;">
                             <div class="grid-sizer"></div>
                             <div class="grid-sizer"></div>
-                            <!-- Video elements grid -->
-                            <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="0" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="grid-sizer"></div>
+                            <div class="video-item artists-image wide ratio-16x9" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video1.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image tiny ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="1" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image tiny ratio-1x1" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video2.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image medium ratio-4x3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="2" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image medium ratio-4x3" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video3.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image small ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="3" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image small ratio-1x1" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video4.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image tall ratio-9x16" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="4" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image tall ratio-9x16" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video5.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image small ratio-3x4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="5" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image small ratio-3x4" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video6.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image large ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="6" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image large ratio-16x9" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video7.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image medium ratio-4x3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="7" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image medium ratio-4x3" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video8.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image tiny ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="8" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
+                            <div class="video-item artists-image tiny ratio-1x1" data-media-type="video">
+                                <video class="fullscreen-enabled" preload="none" loading="lazy">
                                     <source src="./video/firevids/video9.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                             </div>
-                            <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="9" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video10.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image tall ratio-3x4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="10" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video11.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image small ratio-4x3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="11" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video12.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image medium ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="12" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video13.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image large ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="13" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video14.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image tiny ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="14" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video15.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image small ratio-4x3" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="15" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video16.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="16" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video17.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image tall ratio-3x4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="17" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video18.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image medium ratio-1x1" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="18" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video19.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image small ratio-3x4" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="19" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video20.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-item artists-image wide ratio-16x9" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-slide-to="20" data-media-type="video">
-                                <video class="" preload="none" loading="lazy">
-                                    <source src="./video/firevids/video21.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                </div>
-            </div>
+                        </div><!-- Close artists-grid -->
+                    </div><!-- Close row -->
+                </div><!-- Close container -->
         </section>
 
-        <!-- Bootstrap Modal for Image Slider -->
-        <!-- Bootstrap Modal for Image and Video Slider -->
+        <!-- Custom styles for video grid -->
         <style>
-            .modal-body {
-                background-color: rgba(141, 138, 138, 0.7); /* 70% opacity */
-                padding: 20px;
-            }
-            .carousel-inner img, .carousel-inner video {
-                border-radius: 15px; /* Apply rounding to the slider frame */
-                max-height: 80vh;
-                width: auto;
-                margin: 0 auto;
-            }
-            .modal-content {
-                border-radius: 15px; /* Apply rounding to the outer edge of the slider */
-                background-color: rgba(0, 0, 0, 0.85);
-            }
-            .modal-header {
-                background-color: transparent; /* Make the background of modal title transparent */
-                border-bottom: none;
-            }
-            .carousel-indicators {
-                margin-bottom: 0;
-            }
             
             /* Masonry Grid Layout */
             /* Masonry Grid Layout */
@@ -638,10 +495,6 @@
             
             /* All play button related styles have been removed */
             /* Masonry handles responsive layout, media queries not needed for widths */
-            .carousel-item {
-                text-align: center;
-                text-align: center;
-            }
             
             /* Video Preview Functionality */
             .video-item {
@@ -690,222 +543,6 @@
             
             /* All play button and icon styling completely removed */
         </style>
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2 class="modal-title text-white" id="imageModalLabel">Paradise</h2>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="carouselGallery" class="carousel slide" data-bs-ride="false">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Video 1"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="1" aria-label="Video 2"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="2" aria-label="Video 3"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="3" aria-label="Video 4"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="4" aria-label="Video 5"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="5" aria-label="Video 6"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="6" aria-label="Video 7"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="7" aria-label="Video 8"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="8" aria-label="Video 9"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="9" aria-label="Video 10"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="10" aria-label="Video 11"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="11" aria-label="Video 12"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="12" aria-label="Video 13"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="13" aria-label="Video 14"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="14" aria-label="Video 15"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="15" aria-label="Video 16"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="16" aria-label="Video 17"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="17" aria-label="Video 18"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="18" aria-label="Video 19"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="19" aria-label="Video 20"></button>
-                                <button type="button" data-bs-target="#carouselGallery" data-bs-slide-to="20" aria-label="Video 21"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video1.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video2.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video3.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video4.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video5.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video6.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video7.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video8.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video9.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video10.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video11.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video12.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video13.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video14.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video15.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video16.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video17.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video18.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video19.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video20.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="carousel-item" data-media-type="video">
-                                    <div class="video-container">
-                                        <video controls class="d-block w-100" preload="none" loading="lazy">
-                                            <source src="./video/firevids/video21.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Carousel Controls -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div> <!-- Close carousel -->
-                    </div> <!-- Close modal-body -->
-                </div> <!-- Close modal-content -->
-            </div> <!-- Close modal-dialog -->
-        </div> <!-- Close modal -->
 
 
 
@@ -1032,13 +669,14 @@
 </footer>
 
     <!-- JS FILES -->
-    <!-- JS FILES -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/click-scroll.js"></script>
+    <script>
+        // About image tilt effect
         document.querySelectorAll('.about-image').forEach(image => {
             image.addEventListener('mousemove', (e) => {
                 const rect = image.getBoundingClientRect();
@@ -1059,6 +697,48 @@
         });
     </script>
     <script>
+        // Add CSS for fullscreen video support
+        const fullscreenStyle = document.createElement('style');
+        fullscreenStyle.textContent = `
+            .video-item {
+                position: relative;
+                cursor: pointer;
+            }
+            
+            .video-fullscreen-icon {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                width: 30px;
+                height: 30px;
+                background-color: rgba(255, 255, 255, 0.4);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 5;
+                opacity: 0;
+                transition: opacity 0.3s ease, background-color 0.3s ease;
+                pointer-events: none;
+            }
+            
+            .video-item:hover .video-fullscreen-icon {
+                opacity: 1;
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+            
+            .video-fullscreen-icon::before {
+                content: '';
+                display: block;
+                width: 12px;
+                height: 12px;
+                border: 2px solid #000;
+                border-top: none;
+                border-left: none;
+            }
+        `;
+        document.head.appendChild(fullscreenStyle);
+        
         // Initialize Masonry on the artists-grid with specified settings
         document.addEventListener('DOMContentLoaded', function() {
             const grid = document.querySelector('.artists-grid');
@@ -1149,13 +829,11 @@
                     masonry.layout();
                 }, 1000);
             });
-        });
-        // Handle Masonry grid video interactions and carousel
-        document.addEventListener('DOMContentLoaded', function() {
-            // Track video states between grid and carousel
+
+            // Video management and fullscreen functionality
             let currentPlayingVideo = null;
             let videoStates = {}; // Store state information for videos by source path
-            let isModalOpen = false;
+            let isFullscreenActive = false;
             
             // Get the video source path (used as ID for state tracking)
             function getVideoPath(video) {
@@ -1221,12 +899,139 @@
                     applyVideoState(video, true);
                 }
             }
+
+            // Handle fullscreen change event
+            function handleFullscreenChange() {
+                if (!document.fullscreenElement && 
+                    !document.webkitFullscreenElement && 
+                    !document.mozFullScreenElement &&
+                    !document.msFullscreenElement) {
+                    
+                    console.log('Exited fullscreen mode');
+                    
+                    // We've exited fullscreen
+                    isFullscreenActive = false;
+                    // If we have a current fullscreen video, save its state
+                    if (currentPlayingVideo) {
+                        saveVideoState(currentPlayingVideo);
+                        // Don't automatically pause when exiting fullscreen unless page is not visible
+                        if (document.visibilityState === 'hidden') {
+                            currentPlayingVideo.pause();
+                        }
+                        currentPlayingVideo = null;
+                }
+            }
+            
+            // Add fullscreen change event listeners for different browsers
+            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+            
+            // Add fullscreen icon to each video item and setup hover handlers
+            document.querySelectorAll('.video-item').forEach(item => {
+                // Create fullscreen icon
+                const fullscreenIcon = document.createElement('div');
+                fullscreenIcon.className = 'video-fullscreen-icon';
+                item.appendChild(fullscreenIcon);
+                
+                // Add click event to handle fullscreen
+                item.addEventListener('click', function(e) {
+                    // Prevent default to avoid any browser-specific behaviors
+                    e.preventDefault();
+                    
+                    const video = this.querySelector('video');
+                    if (!video) return;
+                    
+                    // Save state before entering fullscreen
+                    saveVideoState(video);
+                    
+                    // Set as current playing video
+                    currentPlayingVideo = video;
+                    
+                    // Request fullscreen
+                    isFullscreenActive = true;
+                    
+                    try {
+                        // Play video first to avoid autoplay issues in fullscreen
+                        video.play().then(() => {
+                            console.log('Playing video before fullscreen');
+                            
+                            // Now request fullscreen
+                            if (video.requestFullscreen) {
+                                video.requestFullscreen();
+                            } else if (video.webkitRequestFullscreen) { // Safari
+                                video.webkitRequestFullscreen();
+                            } else if (video.msRequestFullscreen) { // IE11
+                                video.msRequestFullscreen();
+                            } else if (video.mozRequestFullScreen) { // Firefox
+                                video.mozRequestFullScreen();
+                            } else {
+                                console.log('Fullscreen API not supported in this browser');
+                                isFullscreenActive = false;
+                            }
+                        }).catch(err => {
+                            console.log('Autoplay prevented, trying fullscreen anyway:', err);
+                            
+                            // Try fullscreen even if autoplay fails
+                            if (video.requestFullscreen) {
+                                video.requestFullscreen();
+                            } else if (video.webkitRequestFullscreen) {
+                                video.webkitRequestFullscreen();
+                            } else if (video.mozRequestFullScreen) {
+                                video.mozRequestFullScreen();
+                            } else if (video.msRequestFullscreen) {
+                                video.msRequestFullscreen();
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error entering fullscreen:', error);
+                        isFullscreenActive = false;
+                    }
+                });
+            });
+            
+            // Updated hover-to-play functionality for videos in the grid
+            document.querySelectorAll('.video-item').forEach(function(item) {
+                // Create overlay elements for play/pause indicators
+                var overlayEl = document.createElement('div');
+                overlayEl.className = 'video-preview-overlay';
+                item.appendChild(overlayEl);
+                
+                // Get the video element within the item
+                var videoEl = item.querySelector('video');
+                if (!videoEl) return; // Skip if no video element found
+                
+                // Set initial attributes
+                videoEl.muted = true;
+                videoEl.preload = 'metadata';
+                videoEl.loop = true;
+                
+                // Mouse enter - start preview
+                item.addEventListener('mouseenter', function() {
+                    videoEl.play().catch(e => console.log('Play on hover failed:', e));
+                    overlayEl.classList.add('playing');
+                });
+                
+                // Mouse leave - stop preview
+                item.addEventListener('mouseleave', function() {
+                    // Only if we're not in fullscreen mode
+                    if (!document.fullscreenElement && 
+                        !document.webkitFullscreenElement && 
+                        !document.mozFullScreenElement &&
+                        !document.msFullscreenElement) {
+                        videoEl.pause();
+                        videoEl.currentTime = 0;
+                        overlayEl.classList.remove('playing');
+                    }
+                });
+            });
             
             // Handle video events to track playing state for all videos
-            document.querySelectorAll('.video-container video, .video-item video').forEach(video => {
-                // When video starts playing, update our tracking
+            document.querySelectorAll('.video-item video').forEach(video => {
+                // When video starts playing
                 video.addEventListener('play', () => {
-                    currentPlayingVideo = video;
+                    if (!isFullscreenActive) {
+                        currentPlayingVideo = video;
+                    }
                     const videoPath = getVideoPath(video);
                     if (videoPath && videoStates[videoPath]) {
                         videoStates[videoPath].wasPlaying = true;
@@ -1242,230 +1047,59 @@
                 });
                 
                 // Track time updates to maintain current position
+                // Track time updates to maintain current position
                 video.addEventListener('timeupdate', () => {
                     const videoPath = getVideoPath(video);
                     // Only update every second to reduce overhead
                     if (videoPath && (!videoStates[videoPath]?.lastTimeUpdate || 
                          Date.now() - videoStates[videoPath].lastTimeUpdate > 1000)) {
+                        if (!videoStates[videoPath]) {
+                            videoStates[videoPath] = {};
+                        }
                         
-                        if (!videoStates[videoPath]) videoStates[videoPath] = {};
                         videoStates[videoPath].currentTime = video.currentTime;
                         videoStates[videoPath].lastTimeUpdate = Date.now();
                     }
                 });
                 
-                // Handle ended event
-                video.addEventListener('ended', () => {
-                    const videoPath = getVideoPath(video);
-                    if (videoPath && videoStates[videoPath]) {
-                        videoStates[videoPath].wasPlaying = false;
-                        videoStates[videoPath].paused = true;
-                        if (currentPlayingVideo === video) {
-                            currentPlayingVideo = null;
-                        }
-                    }
-                });
-            });
-            
-            // Handle click on Masonry grid items to open and play videos in carousel
-            document.querySelectorAll('.video-item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const slideIndex = this.getAttribute('data-bs-slide-to');
-                    if (slideIndex === null) return;
-
-                    // Get the video in this grid item to transfer its state
-                    const gridVideo = this.querySelector('video');
-                    if (!gridVideo) return;
-                    
-                    // Save the current state of the grid video
-                    saveVideoState(gridVideo);
-
-                    // Prepare to open modal and carousel
-                    const modal = document.querySelector('#imageModal');
-                    const carousel = modal.querySelector('#carouselGallery');
-                    
-                    // Show modal - Bootstrap will fire the 'shown.bs.modal' event once visible
-                    const bsModal = new bootstrap.Modal(modal);
-                    bsModal.show();
-                    
-                    // Move carousel to correct slide after modal is visible
-                    modal.addEventListener('shown.bs.modal', function onceShown() {
-                        isModalOpen = true;
-                        const bsCarousel = new bootstrap.Carousel(carousel);
-                        bsCarousel.to(parseInt(slideIndex));
-                        
-                        // After slide transition, apply the saved state to carousel video
-                        setTimeout(() => {
-                            const activeSlide = carousel.querySelector('.carousel-item.active');
-                            const carouselVideo = activeSlide.querySelector('video');
-                            const videoPath = getVideoPath(gridVideo);
-                            
-                            if (carouselVideo && videoPath) {
-                                // Apply saved state from the grid video
-                                carouselVideo.currentTime = videoStates[videoPath]?.currentTime || 0;
-                                carouselVideo.muted = videoStates[videoPath]?.muted || false;
-                                
-                                // Play if it was playing in the grid
-                                if (videoStates[videoPath]?.wasPlaying) {
-                                    carouselVideo.play().catch(err => {
-                                        console.log('Failed to auto-play in carousel:', err);
-                                    });
-                                    currentPlayingVideo = carouselVideo;
-                                }
-                            }
-                        }, 200);
-                        
-                        // Remove the one-time event listener
-                        modal.removeEventListener('shown.bs.modal', onceShown);
-                    });
-                });
-            });
-            
-            // Handle carousel slide transitions - pause current video before slide
-            document.querySelector('#carouselGallery').addEventListener('slide.bs.carousel', function(e) {
-                // Save state of current video before sliding
-                const currentSlide = this.querySelector('.carousel-item.active');
-                const currentVideo = currentSlide?.querySelector('video');
-                
-                if (currentVideo) {
-                    // Save state for current video
-                    saveVideoState(currentVideo);
-                    
-                    // Pause current video
-                    currentVideo.pause();
-                    if (currentPlayingVideo === currentVideo) {
+                // Handle errors gracefully
+                // Handle errors gracefully
+                video.addEventListener('error', (e) => {
+                    console.error('Video error:', e);
+                    // Remove the current playing status if this video had errors
+                    if (currentPlayingVideo === video) {
                         currentPlayingVideo = null;
                     }
+                });
+            
+                });
+                
+                // Add fullscreen error handling
+                document.addEventListener('fullscreenerror', (e) => {
+                console.error('Fullscreen error:', e);
+                isFullscreenActive = false;
+                if (currentPlayingVideo) {
+                    saveVideoState(currentPlayingVideo);
                 }
             });
             
-            // Handle after slide transition completes - play new video if needed
-            document.querySelector('#carouselGallery').addEventListener('slid.bs.carousel', function() {
-                // Get new active slide video
-                const activeSlide = this.querySelector('.carousel-item.active');
-                const video = activeSlide?.querySelector('video');
-                
-                if (video) {
-                    const videoPath = getVideoPath(video);
-                    
-                    // Apply saved state if available
-                    if (videoPath && videoStates[videoPath]) {
-                        // Set time position from saved state
-                        video.currentTime = videoStates[videoPath].currentTime || 0;
-                        video.muted = videoStates[videoPath].muted || false;
-                        
-                        // Auto-play if it was playing before
-                        if (videoStates[videoPath].wasPlaying) {
-                            video.play().catch(err => {
-                                console.log('Failed to auto-play after slide:', err);
-                            });
-                            currentPlayingVideo = video;
-                        }
+            // Handle browser-specific fullscreen events
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+
+            // Handle page visibility changes to pause videos when tab is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'hidden') {
+                    // Save state of all playing videos
+                    if (currentPlayingVideo) {
+                        saveVideoState(currentPlayingVideo);
+                        currentPlayingVideo.pause();
                     }
                 }
             });
-            
-            // Handle modal close - clean up video states
-            document.querySelector('#imageModal').addEventListener('hide.bs.modal', function() {
-                isModalOpen = false;
-                
-                // Pause all carousel videos and save their states
-                const carouselVideos = this.querySelectorAll('.carousel-item video');
-                carouselVideos.forEach(video => {
-                    // Save state before pausing
-                    saveVideoState(video);
-                    video.pause();
-                });
-                
-                // Clear current playing reference
-                if (currentPlayingVideo && carouselVideos.includes(currentPlayingVideo)) {
-                    currentPlayingVideo = null;
-                }
-                
-                // Match grid videos with saved states from carousel videos
-                document.querySelectorAll('.video-item video').forEach(gridVideo => {
-                    const videoPath = getVideoPath(gridVideo);
-                    if (videoPath && videoStates[videoPath]) {
-                        // Don't auto-restore playing state to grid videos
-                        // Just update timestamp for future reference
-                        gridVideo.currentTime = videoStates[videoPath].currentTime || 0;
-                    }
-                });
-            });
-            
-            // Add optimized video preview handling for the Masonry grid
-            function initVideoPreview(video) {
-                let previewTimeout;
-                const PREVIEW_DELAY = 150;
-                const container = video.closest('.video-item');
-                
-                // Skip if no container found
-                if (!container) return;
-                
-                container.addEventListener('mouseenter', function() {
-                    // Don't start preview if modal is open
-                    if (isModalOpen) return;
-                    
-                    clearTimeout(previewTimeout);
-                    if (video.paused) {
-                        previewTimeout = setTimeout(() => {
-                            // Save state of any currently playing video
-                            if (currentPlayingVideo && currentPlayingVideo !== video) {
-                            }
-                            
-                            if (currentPlayingVideo && currentPlayingVideo !== video) {
-                                saveVideoState(currentPlayingVideo);
-                                currentPlayingVideo.pause();
-                            }
-                            
-                            // Add simple overlay for hover feedback (no play button)
-                            
-                            // Play this video with mute for preview
-                            
-                            // Play this video with mute for preview
-                            video.muted = true;
-                            video.play().catch(err => {
-                                console.log('Preview autoplay prevented:', err);
-                            });
-                            
-                            // Update current playing reference
-                            currentPlayingVideo = video;
-                        }, PREVIEW_DELAY);
-                    }
-                });
-                
-                container.addEventListener('mouseleave', function() {
-                    clearTimeout(previewTimeout);
-                    if (!video.paused) {
-                        // Save state before pausing
-                        saveVideoState(video);
-                        
-                        // Remove overlay if exists
-                        const overlay = container.querySelector('.video-preview-overlay');
-                        if (overlay) {
-                            container.removeChild(overlay);
-                        }
-                        
-                        // Pause and reset to beginning for preview
-                        video.pause();
-                        video.currentTime = 0;
-                        
-                        // Clear current playing reference if it's this video
-                        if (currentPlayingVideo === video) {
-                            currentPlayingVideo = null;
-                        }
-                    }
-                });
-                
-                // Prevent click event when interacting with video controls
-                video.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-            }
-            
-            // Initialize preview for all grid videos
-            document.querySelectorAll('.video-item video').forEach(initVideoPreview);
         });
+    </script>
+    
     <!-- Add CSS for the hover effect and sparkles -->
     <style>
         .logo-sparkle {
