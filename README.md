@@ -49,8 +49,8 @@ paradise/
    - Mobile navigation needs optimization
 
 3. Performance Bottlenecks
-   - Video preloading causing memory issues
-   - Masonry grid layout reflow on video load
+   - Direct video playback without controls
+   - Fullscreen video functionality
 
 ## Immediate TODOs
 
@@ -105,15 +105,16 @@ Note: This is a development version. Ensure all optimizations are implemented be
 ### Video Asset Management
 1. Video Compression Standards
    - Max file size: 10MB per video
-   - Recommended format: .webm with fallback .mp4
-   - Resolution: 720p max for thumbnails
-   - Use poster images for initial load
+   - Format: .mp4
+   - Resolution: 720p max
 
-2. Performance Optimization
+2. Video Implementation Requirements
+   - Auto-play on hover in artists section
+   - Fullscreen playback on click
+   - No video controls visible
+   - Maintain playback position when entering/exiting fullscreen
    ```javascript
-   // Example lazy loading implementation
-   <video preload="none" poster="path/to/poster.webp">
-     <source src="video.webm" type="video/webm">
+   <video preload="none">
      <source src="video.mp4" type="video/mp4">
    </video>
    ```
@@ -154,14 +155,14 @@ Note: This is a development version. Ensure all optimizations are implemented be
 
 ### Deployment Checklist
 
-- [ ] Compress all videos
-- [ ] Enable server caching
-- [ ] Configure CDN
+- [ ] Optimize video playback
+- [ ] Test fullscreen functionality
+- [ ] Fix Masonry grid layout
 - [ ] Test all navigation paths
 - [ ] Verify mobile responsiveness
-- [ ] Check memory usage under load
+- [ ] Check video hover-to-play functionality
 - [ ] Enable error logging
-- [ ] Setup monitoring
+- [ ] Test cross-browser compatibility
 
 ### Contributing Guidelines
 

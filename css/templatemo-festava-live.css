@@ -668,49 +668,32 @@ strong {
   transform: perspective(1000px) rotateY(var(--rotate-y)) rotateX(var(--rotate-x));
 }
 
-/* JavaScript to handle mouse movement and apply the effect */
-document.querySelectorAll('.about-image').forEach(image => {
-    image.addEventListener('mousemove', (e) => {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            
-            /* Add fullscreen entry animation */
-            @keyframes enter-fullscreen {
-                from {
-                    transform: scale(0.9);
-                    opacity: 0.7;
-                }
-                to {
-                    transform: scale(1);
-                    opacity: 1;
-                }
-            }
-            
-            /* Apply animation when entering fullscreen */
-            video:fullscreen {
-                animation: enter-fullscreen 0.3s ease-out;
-            }
-            
-            /* All play button related styles have been removed */
- }
-            
-            .fullscreen-enabled:hover::-webkit-media-controls {
-                opacity: 1;
-            }
-            
-            /* Style for videos in fullscreen mode */
-            video:fullscreen {
-                background-color: #000;
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
-        image.style.setProperty('--rotate-x', '0deg');
-        image.style.setProperty('--rotate-y', '0deg');
-    });
-});
+/* About image hover effect is handled by JavaScript */
+
+/* Fullscreen video animation and styling */
+@keyframes enter-fullscreen {
+    from {
+        transform: scale(0.9);
+        opacity: 0.7;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply animation when entering fullscreen */
+video:fullscreen {
+    animation: enter-fullscreen 0.3s ease-out;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fullscreen-enabled:hover::-webkit-media-controls {
+    opacity: 1;
+}
 
 /* Add vertical margin between the top and bottom boxes in the about-section */
 .about-section .row + .row {
@@ -845,6 +828,7 @@ document.querySelectorAll('.about-image').forEach(image => {
   padding: 50px 0;
   overflow: hidden; /* Prevent any overflow issues */
 }
+
 .artists-grid {
   margin: 0 auto; /* Center the grid */
   /* Set width to auto to allow Masonry to control width with fitWidth */
@@ -853,84 +837,92 @@ document.querySelectorAll('.about-image').forEach(image => {
   /* For Masonry to work properly, only container dimensions should be defined here */
 }
 
+/*---------------------------------------
+  VIDEO GRID LAYOUT AND SIZING
+-----------------------------------------*/
 /* Size definitions for Masonry to determine column widths */
 .grid-sizer {
   width: 20%; /* Base width for grid sizing */
   visibility: hidden; /* Hide the element */
 }
 
-.video-item.tiny {
-  width: 20%;
-}
+/* Video item sizes */
+.video-item.tiny { width: 20%; }
+.video-item.small { width: 25%; }
+.video-item.medium { width: 33.333%; }
+.video-item.large { width: 40%; }
+.video-item.wide { width: 50%; }
+.video-item.tall { width: 30%; }
 
-.video-item.small {
-  width: 25%;
-}
-
-.video-item.medium {
-  width: 33.333%;
-}
-
-.video-item.large {
-  width: 40%;
-}
-
-.video-item.wide {
-  width: 50%;
-}
-
-.video-item.tall {
-  width: 30%;
-}
-
+/* Base video item styles */
 .video-item {
+  position: relative;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius-medium);
-  margin-bottom: var(--grid-gap); /* Use CSS variable for consistent spacing */
+  margin-bottom: var(--grid-gap);
   float: left; /* Required for Masonry to work properly */
-  padding: calc(var(--grid-gap) / 2); /* Add padding between items */
-  transform: none; /* Remove any transforms that might interfere with layout */
-  /* Masonry will handle all item positioning within the grid */
+  padding: calc(var(--grid-gap) / 2);
+  transform: none;
 }
 
+/* Video element styling */
 .video-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--border-radius-medium);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Video item size classes are defined above with their width percentages */
+/* Hover effect */
+.video-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-/* Update responsive layouts */
+.video-item:hover video {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Aspect ratio classes for video items */
+.video-item:before {
+  content: '';
+  display: block;
+}
+
+.video-item.ratio-1x1:before {
+  padding-top: 100%;
+}
+
+.video-item.ratio-4x3:before {
+  padding-top: 75%;
+}
+
+.video-item.ratio-16x9:before {
+  padding-top: 56.25%;
+}
+
+.video-item.ratio-3x4:before {
+  padding-top: 133.33%;
+}
+
+.video-item.ratio-9x16:before {
+  padding-top: 177.78%;
+}
+
+/* Responsive layouts - desktop */
 @media screen and (max-width: 1200px) {
   .grid-sizer,
-  .video-item.tiny {
-    width: 25%;
-  }
-  
-  .video-item.small {
-    width: 33.333%;
-  }
-  
-  .video-item.medium {
-    width: 40%;
-  }
-  
-  .video-item.large {
-    width: 50%;
-  }
-  
-  .video-item.wide {
-    width: 66.666%;
-  }
-  
-  .video-item.tall {
-    width: 33.333%;
-  }
+  .video-item.tiny { width: 25%; }
+  .video-item.small { width: 33.333%; }
+  .video-item.medium { width: 40%; }
+  .video-item.large { width: 50%; }
+  .video-item.wide { width: 66.666%; }
+  .video-item.tall { width: 33.333%; }
 }
 
 @media screen and (max-width: 991px) {
@@ -960,22 +952,15 @@ document.querySelectorAll('.about-image').forEach(image => {
   }
 }
 
+/* Responsive layouts - tablet and mobile */
 @media screen and (max-width: 768px) {
   .grid-sizer,
-  .video-item.tiny {
-    width: 33.333%;
-  }
-  
+  .video-item.tiny { width: 33.333%; }
   .video-item.small,
   .video-item.medium,
-  .video-item.tall {
-    width: 50%;
-  }
-  
+  .video-item.tall { width: 50%; }  
   .video-item.large,
-  .video-item.wide {
-    width: 100%;
-  }
+  .video-item.wide { width: 100%; }
 }
 
 @media screen and (max-width: 480px) {
@@ -985,18 +970,19 @@ document.querySelectorAll('.about-image').forEach(image => {
   .video-item.medium,
   .video-item.large,
   .video-item.wide,
-  .video-item.tall {
-    width: 100%;
-  }
+  .video-item.tall { width: 100%; }
 }
 
+/*---------------------------------------
+  ARTISTS IMAGE STYLING             
+-----------------------------------------*/
 .artists-image {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius-medium);
   transition: transform 0.3s ease-in-out;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer; /* Add cursor pointer to indicate clickability */
+  cursor: pointer;
 }
 
 .artists-image:hover {
@@ -1004,93 +990,71 @@ document.querySelectorAll('.about-image').forEach(image => {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-.carousel-item img {
-  border-radius: var(--border-radius-medium);
-}
-
-/* Video-specific styling */
-
-.video-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.video-play-icon {
-    position: absolute; /* Keep this for the play icon positioning */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60px;
-    height: 60px;
-    background-color: rgba(248, 203, 46, 0.85);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    transition: all 0.3s ease;
-}
-
-.video-play-icon::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 12px solid transparent;
-    border-left: 20px solid var(--white-color);
-    border-bottom: 12px solid transparent;
-    margin-left: 4px;
-}
-
-.video-item:hover .video-play-icon {
-    background-color: var(--primary-color);
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
+/*---------------------------------------
+  VIDEO FULLSCREEN FUNCTIONALITY             
+-----------------------------------------*/
+/* Video overlay for better visibility */
 .video-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: var(--border-radius-medium);
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-medium);
+  pointer-events: none;
+  z-index: 1;
 }
+
+/* Fullscreen icon styling */
+.video-fullscreen-icon {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.video-item:hover .video-fullscreen-icon {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.video-fullscreen-icon::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #000;
+  border-top: none;
+  border-left: none;
+}
+
 
 /* Media query updates for video items */
-@media screen and (max-width: 1200px) {
-    /* Width definitions only for responsive sizing */
-    .video-play-icon {
-        width: 50px;
-        height: 50px;
-    }
-}
-
-@media screen and (max-width: 991px) {
-    /* Width definitions are maintained above */
-}
-
-@media screen and (max-width: 768px) {
-    /* Width definitions are maintained above */
-}
-
 @media screen and (max-width: 480px) {
     .video-item {
         aspect-ratio: var(--grid-aspect-ratio-1x1);
     }
     
-    /* Removed grid-column properties to allow Masonry to handle layout */
-    
-    .video-play-icon {
-        width: 40px;
-        height: 40px;
+    .video-fullscreen-icon {
+        width: 24px;
+        height: 24px;
     }
     
-    .video-play-icon::before {
-        border-top: 8px solid transparent;
-        border-left: 15px solid var(--white-color);
-        border-bottom: 8px solid transparent;
+    .video-fullscreen-icon::before {
+        width: 10px;
+        height: 10px;
     }
 }
 
@@ -1533,90 +1497,6 @@ document.querySelectorAll('.about-image').forEach(image => {
   h5 {
     font-size: 20px;
   }
-}
-
-/* Aspect ratio classes - providing container dimensions only */
-/* Video-item positioning is handled by Masonry for layout */
-.video-item:before {
-  content: '';
-  display: block;
-}
-
-.video-item.ratio-1x1:before {
-  padding-top: 100%;
-}
-
-.video-item.ratio-4x3:before {
-  padding-top: 75%;
-}
-
-.video-item.ratio-16x9:before {
-  padding-top: 56.25%;
-}
-
-.video-item.ratio-3x4:before {
-  padding-top: 133.33%;
-}
-
-.video-item.ratio-9x16:before {
-  padding-top: 177.78%;
-}
-
-.video-item video {
-  position: absolute; /* Keep this for aspect ratio system */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Video overlay and play icon styles */
-
-.video-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.video-item .video-play-icon {
-  position: absolute; /* This position needs to be kept for the icon to appear over the video */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background-color: rgba(248, 203, 46, 0.85);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.video-item:hover .video-play-icon {
-  transform: translate(-50%, -50%) scale(1.1);
-  background-color: var(--primary-color);
-}
-.video-item {
-  position: relative; /* This is needed only for absolute positioning of child elements (overlay, play icon) */
-  /* All layout positioning is handled by Masonry */
-  /* This position:relative doesn't interfere with Masonry layout positioning */
-}
-
-.video-item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2);
-  pointer-events: none;
-  border-radius: var(--border-radius-medium);
-  z-index: 1; /* Ensure overlay appears above the video but below the play icon */
-}
 }
 
 @media screen and (max-width: 768px) {

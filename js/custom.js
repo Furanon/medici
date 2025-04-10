@@ -1,7 +1,13 @@
+/**
+ * Paradise - Custom JavaScript
+ * Core functionality for Paradise website
+ */
 (function ($) {
   "use strict";
 
-  // Initialize tsParticles with star effect
+  /**
+   * Initialize tsParticles for background star effect
+   */
   document.addEventListener("DOMContentLoaded", function() {
     tsParticles.load("tsparticles", {
       fullScreen: {
@@ -97,13 +103,213 @@
     });
   });
 
+  /**
+   * Initialize video playback and fullscreen functionality
+   * Handles video hover-to-play and fullscreen state preservation
+   */
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize variables for video state tracking
+    let currentPlayingVideo = null;
+    let isFullscreenActive = false;
+    let videoStates = {};
+
+    // Helper function to get video source path (used as ID)
+    function getVideoPath(video) {
+      return video.querySelector('source')?.getAttribute('src');
+    }
+
+    // Save video state
+    function saveVideoState(video) {
+      if (!video) return;
+      
+      const videoPath = getVideoPath(video);
+      if (!videoPath) return;
+      
+      if (!videoStates[videoPath]) {
+        videoStates[videoPath] = {};
+      }
+      
+      videoStates[videoPath] = {
+        currentTime: video.currentTime || 0,
+        paused: video.paused,
+        muted: video.muted,
+        wasPlaying: !video.paused,
+        lastTimeUpdate: Date.now()
+      };
+      
+      console.log(`Saved state for ${videoPath.split('/').pop()}: time=${video.currentTime.toFixed(2)}, playing=${!video.paused}`);
+    }
+
+    // Handle fullscreen change events
+    function handleFullscreenChange() {
+      if (!document.fullscreenElement && 
+          !document.webkitFullscreenElement && 
+          !document.mozFullScreenElement &&
+          !document.msFullscreenElement) {
+          
+          console.log('Exited fullscreen mode');
+          isFullscreenActive = false;
+          
+          // If we have a current fullscreen video, save its state
+          if (currentPlayingVideo) {
+              saveVideoState(currentPlayingVideo);
+              // Don't pause the video when exiting fullscreen
+              // This allows the video to continue playing in the grid
+              currentPlayingVideo = null;
+          }
+      } else {
+          // We entered fullscreen
+          console.log('Entered fullscreen mode');
+          isFullscreenActive = true;
+      }
+    }
+
+    // Initialize Masonry layout for the video grid
+    const grid = document.querySelector('.artists-grid');
+    if (grid) {
+      // Use imagesLoaded to handle videos and images properly
+      imagesLoaded(grid, function() {
+        // Create Masonry instance with simplified settings
+        const masonry = new Masonry(grid, {
+          itemSelector: '.video-item',
+          columnWidth: '.grid-sizer',
+          percentPosition: true,
+          gutter: 12,
+          fitWidth: true,
+          transitionDuration: '0.4s'
+        });
+        
+        // Force layout immediately
+        masonry.layout();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+          masonry.layout();
+        });
+        
+        // Recheck layout when videos load
+        grid.querySelectorAll('video').forEach(video => {
+          video.addEventListener('loadedmetadata', () => {
+            masonry.layout();
+          });
+        });
+      });
+    }
+
+    // Set up video hover and click functionality for all videos
+    document.querySelectorAll('.video-item').forEach(function(item) {
+      // Create fullscreen icon
+      const fullscreenIcon = document.createElement('div');
+      fullscreenIcon.className = 'video-fullscreen-icon';
+      item.appendChild(fullscreenIcon);
+      
+      // Get the video element
+      const videoEl = item.querySelector('video');
+      if (!videoEl) return;
+      
+      // Set initial attributes
+      videoEl.muted = true;
+      videoEl.preload = 'metadata';
+      videoEl.loop = true;
+      
+      // Mouse enter - start preview
+      item.addEventListener('mouseenter', function() {
+        videoEl.play().catch(e => console.log('Play on hover failed:', e));
+      });
+      
+      // Mouse leave - stop preview if not in fullscreen
+      item.addEventListener('mouseleave', function() {
+        if (!document.fullscreenElement && 
+            !document.webkitFullscreenElement && 
+            !document.mozFullScreenElement &&
+            !document.msFullscreenElement) {
+            videoEl.pause();
+            videoEl.currentTime = 0;
+        }
+      });
+      
+      // Click to fullscreen
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Save current state
+        saveVideoState(videoEl);
+        currentPlayingVideo = videoEl;
+        
+        try {
+          // First try to play video (to avoid autoplay issues in fullscreen)
+          videoEl.play().then(() => {
+            // Now request fullscreen
+            isFullscreenActive = true;
+            if (videoEl.requestFullscreen) {
+              videoEl.requestFullscreen();
+            } else if (videoEl.webkitRequestFullscreen) {
+              videoEl.webkitRequestFullscreen();
+            } else if (videoEl.msRequestFullscreen) {
+              videoEl.msRequestFullscreen();
+            } else if (videoEl.mozRequestFullScreen) {
+              videoEl.mozRequestFullScreen();
+            } else {
+              console.warn('Fullscreen API not supported');
+              isFullscreenActive = false;
+            }
+          }).catch(err => {
+            console.error('Autoplay prevented, trying fullscreen anyway:', err);
+            // Try fullscreen even if autoplay fails
+            if (videoEl.requestFullscreen) {
+              videoEl.requestFullscreen();
+            } else if (videoEl.webkitRequestFullscreen) {
+              videoEl.webkitRequestFullscreen();
+            } else if (videoEl.mozRequestFullScreen) {
+              videoEl.mozRequestFullScreen();
+            } else if (videoEl.msRequestFullscreen) {
+              videoEl.msRequestFullscreen();
+            }
+          });
+        } catch (error) {
+          console.error('Error entering fullscreen:', error);
+        }
+      });
+      
+      // Track time updates to maintain position state
+      videoEl.addEventListener('timeupdate', () => {
+        const videoPath = getVideoPath(videoEl);
+        if (videoPath && (!videoStates[videoPath]?.lastTimeUpdate || 
+            Date.now() - videoStates[videoPath].lastTimeUpdate > 1000)) {
+            if (!videoStates[videoPath]) {
+                videoStates[videoPath] = {};
+            }
+            
+            videoStates[videoPath].currentTime = videoEl.currentTime;
+            videoStates[videoPath].lastTimeUpdate = Date.now();
+        }
+      });
+    });
+    
+    // Add fullscreen change event listeners for different browsers
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+    
+    // Add fullscreen error handling
+    document.addEventListener('fullscreenerror', (e) => {
+      console.error('Fullscreen error:', e);
+      isFullscreenActive = false;
+    });
+  });
+
+  /**
+   * Document ready event handlers
+   * Initialize various UI interactions
+   */
   $(document).ready(function() {
-    // MENU
+    // MENU - Close mobile menu when clicking nav items
     $('.navbar-collapse a').on('click', function() {
       $('.navbar-collapse').removeClass('show');
     });
 
-    // CUSTOM LINK
+    // CUSTOM LINK - Smooth scrolling for navigation
     $('.smoothscroll').on('click', function(event) {
       event.preventDefault();
       var targetId = $(this).attr('href');
@@ -116,11 +322,6 @@
           scrollTop: targetPosition
         }, 800);
       }
-    });
-
-    // Ensure the map tab is working correctly
-    $('#nav-ContactMap-tab').on('shown.bs.tab', function() {
-      $(window).trigger('resize');
     });
 
     // Add tilting effect to the about image
@@ -158,355 +359,11 @@
       }
     });
 
+    // Form submission handling
     $('#ticketForm').on('submit', function(event) {
       event.preventDefault();
       // Add your form submission logic here
       alert('Form submitted!');
     });
-
-    /*/ Add hover effect to navbar logo when "Home" section is active
-    $(document).scroll(function() {
-      var homeSection = $('#section_1');
-      if (homeSection.length) {
-        var offsetSection = homeSection.offset().top - 83;
-        var docScroll = $(document).scrollTop();
-        var docScroll1 = docScroll + 1;
-
-        if (docScroll1 >= offsetSection && docScroll1 < offsetSection + homeSection.outerHeight()) {
-          $('.navbar-nav .nav-link img').css('filter', 'brightness(1.2) sepia(1) hue-rotate(90deg) saturate(5)');
-        } else {
-          $('.navbar-nav .nav-link img').css('filter', 'none');
-        }
-      }
-    }); */
-
-    // Initialize all Bootstrap components
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize gallery modal only
-        var galleryModal = document.getElementById('imageModal');
-        if (galleryModal) {
-            new bootstrap.Modal(galleryModal);
-        }
-
-        // Initialize carousel with proper settings using native Bootstrap 5
-        var galleryCarousel = new bootstrap.Carousel(document.getElementById('carouselGallery'), {
-            interval: false,
-            keyboard: true
-        });
-
-        // Handle image and video click to show in modal with vanilla JS
-        document.querySelectorAll('.artists-image, .video-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var slideTo = this.getAttribute('data-bs-slide-to');
-                var modal = new bootstrap.Modal(document.getElementById('imageModal'));
-                modal.show();
-                galleryCarousel.to(parseInt(slideTo));
-            });
-        });
-
-        // Handle modal opening for videos with vanilla JS
-        document.getElementById('imageModal').addEventListener('shown.bs.modal', function() {
-            var activeItem = this.querySelector('.carousel-item.active');
-            if (activeItem.getAttribute('data-media-type') === 'video') {
-                var video = activeItem.querySelector('video');
-                if (video) {
-                    video.play();
-                }
-            }
-        });
-
-        // Pause videos when modal is closed with vanilla JS
-        document.getElementById('imageModal').addEventListener('hide.bs.modal', function() {
-            var videos = this.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-
-        // Handle transitions between slides
-        document.getElementById('carouselGallery').addEventListener('slide.bs.carousel', function(e) {
-            // Pause all videos and reset them to beginning
-            var videos = this.querySelectorAll('video');
-            videos.forEach(function(video) {
-                video.pause();
-                video.currentTime = 0;
-            });
-        });
-
-        // After slide transition completes
-        document.getElementById('carouselGallery').addEventListener('slid.bs.carousel', function() {
-            var activeItem = this.querySelector('.carousel-item.active');
-            if (activeItem.getAttribute('data-media-type') === 'video') {
-                var video = activeItem.querySelector('video');
-                if (video) {
-                    video.play();
-                }
-            }
-        });
-
-        // Video control buttons
-        document.querySelectorAll('.video-control-btn').forEach(function(button) {
-            button.addEventListener('click', function() {
-                var action = this.getAttribute('data-action');
-                var carouselItem = this.closest('.carousel-item');
-                var video = carouselItem.querySelector('video');
-                
-                if (!video) return;
-                
-                switch(action) {
-                    case 'play':
-                        video.play();
-                        break;
-                    case 'pause':
-                        video.pause();
-                        break;
-                    case 'mute':
-                        video.muted = !video.muted;
-                        var icon = this.querySelector('i');
-                        if (video.muted) {
-                            icon.classList.remove('bi-volume-up-fill');
-                            icon.classList.add('bi-volume-mute-fill');
-                        } else {
-                            icon.classList.remove('bi-volume-mute-fill');
-                            icon.classList.add('bi-volume-up-fill');
-                        }
-                        break;
-                }
-            });
-        });
-
-        // Handle keyboard controls for videos
-        document.addEventListener('keydown', function(e) {
-            var modal = document.getElementById('imageModal');
-            if (!modal.classList.contains('show')) return;
-            
-            var activeSlide = document.querySelector('#carouselGallery .carousel-item.active');
-            if (activeSlide.getAttribute('data-media-type') !== 'video') return;
-            
-            var video = activeSlide.querySelector('video');
-            if (!video) return;
-            
-            switch(e.key.toLowerCase()) {
-                case ' ':  // Space bar
-                    e.preventDefault();
-                    video.paused ? video.play() : video.pause();
-                    break;
-                case 'm':  // Mute toggle
-                    video.muted = !video.muted;
-                    var muteButton = activeSlide.querySelector('[data-action="mute"] i');
-                    muteButton.classList.toggle('bi-volume-up-fill');
-                    muteButton.classList.toggle('bi-volume-mute-fill');
-                    break;
-            }
-        });
-    });
-
-    // All event handlers have been moved into the DOMContentLoaded event listener above
-
-    // Add hover-to-preview functionality for video items in the artists grid
-    document.querySelectorAll('.video-item').forEach(function(item) {
-        // Create overlay elements for play/pause indicators
-        var overlayEl = document.createElement('div');
-        overlayEl.className = 'video-preview-overlay';
-        
-        var iconEl = document.createElement('i');
-        iconEl.className = 'bi bi-play-circle-fill preview-icon';
-        overlayEl.appendChild(iconEl);
-        
-        item.appendChild(overlayEl);
-        
-        // Get the video element within the item
-        var videoEl = item.querySelector('video');
-        if (!videoEl) return; // Skip if no video element found
-        
-        // Set initial attributes
-        videoEl.muted = true;
-        videoEl.preload = 'metadata';
-        videoEl.loop = true;
-        
-        // Mouse enter - start preview
-        item.addEventListener('mouseenter', function() {
-            videoEl.play();
-            iconEl.classList.remove('bi-play-circle-fill');
-            iconEl.classList.add('bi-pause-circle-fill');
-            overlayEl.classList.add('playing');
-        });
-        
-        // Mouse leave - stop preview
-        item.addEventListener('mouseleave', function() {
-            videoEl.pause();
-            videoEl.currentTime = 0;
-            iconEl.classList.remove('bi-pause-circle-fill');
-            iconEl.classList.add('bi-play-circle-fill');
-            overlayEl.classList.remove('playing');
-        });
-        
-        // Toggle play/pause on overlay click
-        overlayEl.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent triggering the modal
-            
-            if (videoEl.paused) {
-                videoEl.play();
-                iconEl.classList.remove('bi-play-circle-fill');
-                iconEl.classList.add('bi-pause-circle-fill');
-                overlayEl.classList.add('playing');
-            } else {
-                videoEl.pause();
-                iconEl.classList.remove('bi-pause-circle-fill');
-                iconEl.classList.add('bi-play-circle-fill');
-                overlayEl.classList.remove('playing');
-            }
-        });
-    });
-
-    // News slider functionality
-    var bg = document.querySelector('.item-bg');
-    var items = document.querySelectorAll('.news__item');
-    var item = document.querySelector('.news__item');
-
-    function cLog(content) {
-        console.log(content)
-    }
-
-    if($(window).width() > 800) {
-        $(document).on("mouseover", ".news__item", function (_event, _element) {
-
-            var newsItem = document.querySelectorAll('.news__item');
-            newsItem.forEach(function (element, index) {
-                element.addEventListener('mouseover', function () {
-                    var x = this.getBoundingClientRect().left;
-                    var y = this.getBoundingClientRect().top;
-                    var width = this.getBoundingClientRect().width;
-                    var height = this.getBoundingClientRect().height;
-
-                    $('.item-bg').addClass('active');
-                    $('.news__item').removeClass('active');
-
-                    bg.style.width = width + 'px';
-                    bg.style.height = height + 'px';
-                    bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
-                });
-
-                element.addEventListener('mouseleave', function () {
-                    $('.item-bg').removeClass('active');
-                    $('.news__item').removeClass('active');
-                });
-
-            });
-
-        });
-    }
-
-    var swiper = new Swiper('.news-slider', {
-        effect: 'coverflow',
-        grabCursor: true,
-        loop: true,
-        centeredSlides: true,
-        keyboard: true,
-        spaceBetween: 0,
-        slidesPerView: 'auto',
-        speed: 300,
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 0,
-            depth: 0,
-            modifier: 3,
-            slideShadows: false
-        },
-        breakpoints: {
-            480: {
-                spaceBetween: 0,
-                centeredSlides: true
-            }
-        },
-        simulateTouch: true,
-        navigation: {
-            nextEl: '.news-slider-next',
-            prevEl: '.news-slider-prev'
-        },
-        pagination: {
-            el: '.news-slider__pagination',
-            clickable: true
-        },
-        on: {
-            init: function () {
-                var activeItem = document.querySelector('.swiper-slide-active');
-
-                var sliderItem = activeItem.querySelector('.news__item');
-
-                $('.swiper-slide-active .news__item').addClass('active');
-
-                var x = sliderItem.getBoundingClientRect().left;
-                var y = sliderItem.getBoundingClientRect().top;
-                var width = sliderItem.getBoundingClientRect().width;
-                var height = sliderItem.getBoundingClientRect().height;
-
-                $('.item-bg').addClass('active');
-
-                bg.style.width = width + 'px';
-                bg.style.height = height + 'px';
-                bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
-            }
-        }
-    });
-
-    swiper.on('touchEnd', function () {
-        $('.news__item').removeClass('active');
-        $('.swiper-slide-active .news__item').addClass('active');
-    });
-
-    swiper.on('slideChange', function () {
-        $('.news__item').removeClass('active');
-    });
-
-    swiper.on('slideChangeTransitionEnd', function () {
-        $('.news__item').removeClass('active');
-        var activeItem = document.querySelector('.swiper-slide-active');
-
-        var sliderItem = activeItem.querySelector('.news__item');
-
-        $('.swiper-slide-active .news__item').addClass('active');
-
-        var x = sliderItem.getBoundingClientRect().left;
-        var y = sliderItem.getBoundingClientRect().top;
-        var width = sliderItem.getBoundingClientRect().width;
-        var height = sliderItem.getBoundingClientRect().height;
-
-        $('.item-bg').addClass('active');
-
-        bg.style.width = width + 'px';
-        bg.style.height = height + 'px';
-        bg.style.height = height + 'px';
-        bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
-    });
-
-    // Initialize Masonry
-    var $grid = $('.artists-grid').masonry({
-      itemSelector: '.video-item',
-      columnWidth: '.grid-sizer',
-      fitWidth: true,
-      percentPosition: true,
-      gutter: 16
-    });
-
-    // Re-layout Masonry when images are loaded
-    $grid.imagesLoaded().progress(function() {
-      $grid.masonry('layout');
-    });
-
-    // Re-layout Masonry on window resize (with debounce)
-    var resizeTimer;
-    $(window).on('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        $grid.masonry('layout');
-      }, 250);
-    });
   });
 })(jQuery);
-
-
-
-
-
