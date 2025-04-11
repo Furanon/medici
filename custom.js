@@ -1,26 +1,89 @@
+// Parallax effect variables
+let lastScrollY = window.scrollY;
+let ticking = false;
+let scrollTimeout;
+let resizeTimeout;
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Fade in elements as they enter the viewport
+function handleScrollAnimation() {
+    document.querySelectorAll(".navbar, .navbar-nav .nav-link, .navbar-brand, .social-icon-link, .wonderland-text").forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add("is-visible");
+        }
+    });
+}
+
+// Enhanced parallax animation
+function updateParallax() {
+    const tsParticles = document.getElementById('tsparticles');
+    if (tsParticles) {
+        const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        const offset = Math.min(window.scrollY * 0.4, window.innerHeight * 0.4);
+        const scale = 1.1 + (scrollPercent * 0.08);
+        const opacity = Math.max(0.85, 1 - (scrollPercent * 0.25));
+        
+        requestAnimationFrame(() => {
+            tsParticles.style.transform = `translate3d(0, ${offset}px, -100px) scale(${scale})`;
+            tsParticles.style.opacity = opacity;
+        });
+    }
+    ticking = false;
+}
+
+// Optimized scroll handler
+const optimizedScroll = () => {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            scrollTimeout = null;
+            requestAnimationFrame(() => {
+                updateParallax();
+                handleScrollAnimation();
+            });
+        }, Math.max(1000 / 60, 16));
+    }
+};
+
+// Initialize everything when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
-    // Initialize tsParticles for star background
+    // Initialize tsParticles
     tsParticles.load("tsparticles", {
+        fullScreen: {
+            enable: false
+        },
+        style: {
+            position: "fixed"
+        },
         fps_limit: 60,
         background: {
-            color: "transparent" // Transparent background to let gradient show through
+            color: "transparent"
         },
         particles: {
             number: {
-                value: 80, // Moderate number of particles
+                value: 80,
                 density: {
                     enable: true,
                     value_area: 800
                 }
             },
             color: {
-                value: "#ffffff" // White stars
+                value: "#ffffff"
             },
             shape: {
                 type: "circle"
             },
             opacity: {
-                value: 0.5, // Semi-transparent
+                value: 0.5,
                 random: true,
                 anim: {
                     enable: true,
@@ -30,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             },
             size: {
-                value: 2.5, // Small particles
+                value: 2.5,
                 random: true,
                 anim: {
                     enable: true,
@@ -41,14 +104,14 @@ document.addEventListener("DOMContentLoaded", function() {
             },
             line_linked: {
                 enable: true,
-                distance: 150, // Distance for connecting stars
+                distance: 150,
                 color: "#ffffff",
-                opacity: 0.2, // Very subtle connections
+                opacity: 0.2,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 0.3, // Slow, gentle movement
+                speed: 0.3,
                 direction: "none",
                 random: true,
                 straight: false,
@@ -66,11 +129,11 @@ document.addEventListener("DOMContentLoaded", function() {
             events: {
                 onhover: {
                     enable: true,
-                    mode: "grab" // Connect nearby particles on hover
+                    mode: "grab"
                 },
                 onclick: {
                     enable: true,
-                    mode: "push" // Add particles on click
+                    mode: "push"
                 },
                 resize: true
             },
@@ -78,40 +141,38 @@ document.addEventListener("DOMContentLoaded", function() {
                 grab: {
                     distance: 140,
                     line_linked: {
-                        opacity: 0.4 // Slightly more visible connections on hover
+                        opacity: 0.4
                     }
                 },
                 push: {
-                    particles_nb: 3 // Add 3 particles on click
+                    particles_nb: 3
                 }
             }
         },
         retina_detect: true
+    }).then(() => {
+        // Initialize parallax after particles are loaded
+        updateParallax();
+        
+        // Set up initial styles
+        const tsParticles = document.getElementById('tsparticles');
+        if (tsParticles) {
+            tsParticles.style.transition = 'transform 0.01s linear';
+        }
+        
+        // Staged updates for reliability
+        [100, 500, 1000].forEach(time => {
+            setTimeout(updateParallax, time);
+        });
     });
 
-    // Function to check if an element is in the viewport
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+    // Set up event listeners
+    window.addEventListener('scroll', optimizedScroll, { passive: true });
+    window.addEventListener('resize', () => {
+        if (resizeTimeout) clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateParallax, 50);
+    }, { passive: true });
 
-    // Fade in elements as they enter the viewport
-    function handleScrollAnimation() {
-        document.querySelectorAll(".navbar, .navbar-nav .nav-link, .navbar-brand, .social-icon-link, .wonderland-text").forEach(element => {
-            if (isInViewport(element)) {
-                element.classList.add("is-visible");
-            }
-        });
-    }
-
-    // Initial check on page load
+    // Initial animation check
     handleScrollAnimation();
-
-    // Check on scroll
-    window.addEventListener("scroll", handleScrollAnimation);
 });
