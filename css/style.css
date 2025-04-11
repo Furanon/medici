@@ -7,21 +7,19 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
-    transform: translate3d(0, 0, 0) scale(1.1);
-    will-change: transform;
+    z-index: 2;
     pointer-events: none;
+    transform-style: preserve-3d;
+    will-change: transform;
     perspective: 1000px;
-    backface-visibility: hidden;
-    transform-origin: center center;
-    filter: blur(0);
-    transition: transform 0.01s linear;
-    -webkit-transform-style: preserve-3d; /* Add vendor prefix */
-    -webkit-backface-visibility: hidden; /* Add vendor prefix */
-    -webkit-perspective: 1000px; /* Add vendor prefix */
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+    filter: blur(0.5px); /* Subtle blur for glow effect */
+    mix-blend-mode: screen; /* Enhance glow effect */
 }
 
 /* Optimize main content container */
+/* Main content should be behind particles */
 main {
     position: relative;
     z-index: 1;
@@ -29,23 +27,17 @@ main {
     transform: translate3d(0, 0, 0);
     will-change: transform;
     transform-style: preserve-3d;
-    backface-visibility: hidden;
     min-height: 100vh;
-    perspective: 1000px;
-    -webkit-transform-style: preserve-3d; /* Add vendor prefix */
-    -webkit-backface-visibility: hidden; /* Add vendor prefix */
-    -webkit-perspective: 1000px; /* Add vendor prefix */
+    -webkit-transform-style: preserve-3d;
 }
 
 /* Enhance hero section depth */
+/* Hero section and other content */
 .hero-section {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     transform-style: preserve-3d;
-    transition: transform 0.1s ease-out;
-    transform: translateZ(0);
-    -webkit-transform-style: preserve-3d; /* Add vendor prefix */
-    -webkit-transform: translateZ(0); /* Add vendor prefix */
+    -webkit-transform-style: preserve-3d;
 }
 
 /* Optimize scrolling */
@@ -70,4 +62,22 @@ body {
         rgba(0, 0, 0, 0.02) 50%,
         rgba(0, 0, 0, 0.05) 100%
     );
+}
+
+/* Add a subtle dark overlay to enhance particle visibility */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
 }

@@ -11,9 +11,22 @@
   document.addEventListener("DOMContentLoaded", function() {
     tsParticles.load("tsparticles", {
       fullScreen: {
-        enable: false
+        enable: true,
+        zIndex: -1 // Match CSS z-index
       },
-      fpsLimit: 60,
+      motion: {
+        enable: true,
+        reduce: {
+          factor: 2, // Reduced for better visibility
+          value: true
+        }
+      },
+      transform: {
+        enable: true,
+        duration: 0.3,
+        timing: "ease-out"
+      },
+      fpsLimit: 120, // Increased for smoother animation
       particles: {
         number: {
           value: 160,
@@ -53,12 +66,13 @@
         },
         move: {
           enable: true,
-          speed: 0.2,
+          speed: 0.7, // Increased speed for better visibility
           direction: "none",
           random: true,
           straight: false,
           out_mode: "out",
           bounce: false,
+          parallax: true, // Enable parallax effect
           attract: {
             enable: false,
             rotateX: 600,
@@ -101,7 +115,114 @@
         size: "cover"
       }
     });
-  });
+
+    // Remove the duplicate scroll handlers and combine them into one optimized handler
+    let ticking = false;
+    let scrollTimeout;
+    let lastKnownScrollPosition = 0;
+
+    // Define DEBUG_PARTICLES flag for conditional logging
+    window.DEBUG_PARTICLES = false;
+
+    function updateParticleTransform(scrollPos) {
+        const container = document.getElementById('tsparticles');
+        if (container) {
+            // Calculate transform with easing and less aggressive parallax
+            const transformValue = scrollPos * 0.3; // Reduced from 0.5 to 0.3 for smoother effect
+            
+            // Use matrix3d for better performance
+            const transform = `matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,${transformValue},0,1)`;
+            
+            // Apply optimized transform
+            container.style.transform = transform;
+            container.style.webkitTransform = transform;
+            container.style.mozTransform = transform;
+            container.style.msTransform = transform;
+            
+            // Apply transform with CSS containment for better performance
+            container.style.contain = 'paint layout';
+            
+            // Log only when debugging is needed
+            if (window.DEBUG_PARTICLES) {
+                console.log('Transform test results:', {
+                    scrolled: scrollPos,
+                    transform: transform,
+                    containerVisible: !!container.offsetParent,
+                    zIndex: getComputedStyle(container).zIndex,
+                    transformComputed: getComputedStyle(container).transform
+                });
+
+                console.log('Container visibility check:', {
+                    offsetParent: container.offsetParent,
+                    getBoundingClientRect: container.getBoundingClientRect(),
+                    computedDisplay: getComputedStyle(container).display
+                });
+            }
+        }
+    }
+
+    // Single optimized scroll handler
+    window.addEventListener('scroll', function() {
+        lastKnownScrollPosition = window.pageYOffset;
+        
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const container = document.getElementById('tsparticles');
+                if (container) {
+                    // Set will-change before transform
+                    container.style.willChange = 'transform';
+                    
+                    // Update transform
+                    updateParticleTransform(lastKnownScrollPosition);
+                    
+                    // Reset ticking flag
+                    ticking = false;
+                }
+            });
+            ticking = true;
+        }
+        
+        // Debounce will-change cleanup with shorter timeout
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const container = document.getElementById('tsparticles');
+            if (container) {
+                container.style.willChange = 'auto';
+                container.style.contain = 'none';
+            }
+        }, 100); // Reduced from 150ms to 100ms
+    });
+    });
+
+    // Initial transform check on load with a slight delay
+    window.addEventListener('load', function() {
+        // Small delay to ensure tsParticles is fully initialized
+        setTimeout(() => {
+            updateParticleTransform(window.pageYOffset);
+            
+            // Enable debug if needed (uncomment for debugging)
+            // window.DEBUG_PARTICLES = true;
+            
+            // Verify particles container is properly configured
+            if (window.DEBUG_PARTICLES) {
+                const container = document.getElementById('tsparticles');
+                if (container) {
+                    console.log('Particles container initialized:', {
+                        size: container.getBoundingClientRect(),
+                        styles: {
+                            zIndex: getComputedStyle(container).zIndex,
+                            position: getComputedStyle(container).position,
+                            display: getComputedStyle(container).display,
+                            visibility: getComputedStyle(container).visibility,
+                            opacity: getComputedStyle(container).opacity
+                        }
+                    });
+                } else {
+                    console.error('Particles container not found!');
+                }
+            }
+        }, 100);
+    });
 
   /**
    * Initialize video playback and fullscreen functionality
@@ -339,15 +460,14 @@
         var deltaY = (y - centerY) / centerY;
         var rotateX = deltaY * 10; // Adjust the tilt intensity
         var rotateY = -deltaX * 10; // Adjust the tilt intensity
-
-        aboutImage.css('transform', `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+        aboutImage.css('transform', `perspective(1000px) translate3d(0,0,0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
       });
 
       aboutTextWrap.on('mouseleave', function() {
-        aboutImage.css('transform', 'rotateX(0) rotateY(0)');
+      aboutTextWrap.on('mouseleave', function() {
+        aboutImage.css('transform', 'perspective(1000px) translate3d(0,0,0) rotateX(0) rotateY(0)');
       });
     }
-
     // Add scroll handler for navbar visibility
     $(window).on('scroll', function() {
       if ($(window).scrollTop() > 50) {
